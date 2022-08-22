@@ -1,0 +1,139 @@
+site: Kongulov
+title: Kongulov.dev
+description: Ramiz’s blog about development
+lang: en-US
+#paginate: 1
+timezone: Asia/Baku
+data-theme: dark # default theme "dark" | "light"
+
+pagination:
+  enabled: true
+  permalink: '/page/:num.html'
+  sort_field: 'date'
+  sort_reverse: true
+  per_page: 10
+  trail:
+    before: 4
+    after: 4
+
+author:
+  name: Ramiz Kongulov
+  bio: Ramiz’s blog about development
+  url: https://kongulov.dev
+  avatar: /assets/images/me200x200.jpg
+  username: kongulov # general username
+  github: kongulov # github username
+  twitter: # twitter username
+  email: ramiz.kongulov@gmail.com # email adress
+
+about:
+  skills: ['PHP','PHPUnit','OOP','SOLID','Design patterns','Laravel','REST','MySQL','PostgreSQL','ElasticSearch','Redis','AWS','Docker','Nginx','Composer','Git','Git-Flow']
+  languages: [
+    { text: 'Russian', 'progress': 5 },
+    { text: 'English', 'progress': 2 },
+    { text: 'Azerbaijani', 'progress': 5 },
+    { text: 'Turkish', 'progress': 4 },
+    { text: 'Georgian', 'progress': 3 },
+  ]
+  experience: [
+    {
+      position: 'Senior PHP Developer',
+      companyName: 'PrePay Electronic Payments',
+      date: 'Aug 2021 - Ongoing',
+      location: 'Ramat-Gan, Israel',
+      description: 'Developed a banking application backend based on microservice architecture. Using the application, users can open bank accounts, conduct transactions, pay bills, control payments, generate invoices, create and sign documents.'
+    },
+    {
+      position: 'Lead PHP Developer',
+      companyName: 'BestComp Group',
+      date: 'Sep 2019 - Aug 2021',
+      location: 'Baku, Azerbaijan',
+      description: 'My team and I have developed and updated the largest auto catalog and classifieds site in the car sector. (https://mashin.al/) "MashinAL" is one of the largest car bulletin boards in Azerbaijan. "MashinAL" has the largest catalog of cars. Here are the technical characteristics, modifications, generations, and other necessary and important data of cars.'
+    },
+    {
+      position: 'Senior PHP Developer',
+      companyName: 'InvestAZ Securities Inc',
+      date: 'Jun 2014 - Mar 2019',
+      location: 'Baku, Azerbaijan',
+      description: 'Creation of new sites and projects for the company. Maintenance and adding new features to an existing site and project. Creation of CRM (Customer Relationship Management) companies'
+    },
+    {
+      position: 'Middle PHP Developer',
+      companyName: 'Start Interactive Agency',
+      date: 'Apr 2012 - May 2014',
+      location: 'Baku, Azerbaijan',
+      description: 'Creation of new sites and projects. Maintenance and adding new functionality to the existing site and the project'
+    }
+  ]
+
+
+# Font Settings
+googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
+
+# URL settings
+#url: "https://kongulov.dev" # Domain Name of host. [username].github.io for github pages
+#baseurl: "/" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+#permalink: pretty
+
+# local
+url: "http://localhost:4000" #
+baseurl: "" #
+
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  implementation: sass-embedded
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-relative-links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
+
+

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1 class="mb-0">TAGS</h1>
+<section id="tags">
+    <!--{{ site | inspect }}-->
+    {% assign tags = site.tags | sort %}
+    <div class="tags">
+        {% for tag in tags %}
+            <a class="tag" href="{{ site.url }}{{ site.baseurl }}/tag/{{ tag | first | slugify }}">
+                <h2 class="inherit">#{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})</h2>
+            </a>
+        {% endfor %}
+    </div>
+</section>

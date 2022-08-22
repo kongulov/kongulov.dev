@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<h1 class="mb-0">Tag #{{page.tag}}</h1>
+<section id="tags">
+  {% assign tags = site.tags | sort %}
+  <div class="tags">
+    {% for tag in tags %}
+    {% assign tagForUrl = tag|first|slugify %}
+    {% assign url = "tag/" | append: tagForUrl %}
+    {% assign urlActive = tagForUrl | append: '.html' %}
+      <a
+        class="tag{% if page.path == urlActive %} active{% endif %}"
+        href="{{ site.url }}{{ site.baseurl }}/{{ url }}"
+      >
+        #{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="posts post-list" id="Blog">
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h2 class="post-title">
+      <a title="{{ post.title }}" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+    {{ post.excerpt }}
+  </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+  {% if paginator.page_trail %}
+    <div class="d-flex flex-center mt-10">
+      <ul class="pagination">
+        <li class="page-item previous {% if paginator.page == 1 %}disabled{% endif %}">
+          <a href="{{ paginator.first_page_path | replace:'.html', '' | prepend: site.baseurl }}" class="page-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.3639 7.75735L16.9497 6.34314L11.2929 12L16.9497 17.6568L18.3639 16.2426L14.1213 12L18.3639 7.75735Z" fill="currentColor" /><path d="M11.2929 6.34314L12.7071 7.75735L8.46447 12L12.7071 16.2426L11.2929 17.6568L5.63605 12L11.2929 6.34314Z" fill="currentColor" /></svg>
+          </a>
+        </li>
+        <li class="page-item previous {% if paginator.page == 1 %}disabled{% endif %}">
+          <a href="{{ paginator.previous_page_path | replace:'.html', '' | prepend: site.baseurl }}" class="page-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z" fill="currentColor" /></svg>
+          </a>
+        </li>
+
+        {% for trail in paginator.page_trail %}
+          <li class="page-item {% if page.url == trail.path %}active pe-none{% else %}next{% endif %}">
+            <a class="page-link" href="{{ trail.path | replace:'.html', '' | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+          </li>
+        {% endfor %}
+
+        <li class="page-item next {% if paginator.page == paginator.total_pages %}disabled{% endif %}">
+          <a href="{{ paginator.next_page_path | replace:'.html', '' | prepend: site.baseurl }}" class="page-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" fill="currentColor" /></svg>
+          </a>
+        </li>
+        <li class="page-item next {% if paginator.page == paginator.total_pages %}disabled{% endif %}">
+          <a href="{{ paginator.last_page_path | replace:'.html', '' | prepend: site.baseurl }}" class="page-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.63605 7.75735L7.05026 6.34314L12.7071 12L7.05029 17.6568L5.63608 16.2426L9.87869 12L5.63605 7.75735Z" fill="currentColor" /><path d="M12.7071 6.34314L11.2929 7.75735L15.5356 12L11.2929 16.2426L12.7072 17.6568L18.364 12L12.7071 6.34314Z" fill="currentColor" /></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+{% endif %}

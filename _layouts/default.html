@@ -1,0 +1,84 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MJGRJ36RN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-7MJGRJ36RN');
+    </script>
+<body>
+<main>
+    <section id="intro">
+        <div class="flex-row-between">
+            <a class="home-link" href="{{ site.url }}{{ site.baseurl }}">Kongulov.dev</a>
+            <!--<button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+                <div></div>
+            </button>-->
+            <div class="flex-row-between align-center">
+                <ul class="menu">
+                    <li>
+                        <a href="{{ site.url }}{{ site.baseurl }}" class="{% if page.path == 'index.html' %}active{% endif %}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{{ site.url }}{{ site.baseurl }}/tags" class="{% if page.path == 'tags.html' %}active{% endif %}">Tags</a>
+                    </li>
+                    <li>
+                        <a href="{{ site.url }}{{ site.baseurl }}/about" class="{% if page.path == 'about.html' %}active{% endif %}">
+                            About me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ site.url }}{{ site.baseurl }}/feed.xml">
+                            Feed
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% include anchor_headings.html html=content anchorBody="#" %}
+</main>
+<script>
+    function setTheme(theme) {
+        if (theme === "dark") {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            window.localStorage.setItem('theme', 'dark');
+            document.getElementById("theme-toggle").classList.add('sun');
+            document.getElementById("theme-toggle").classList.remove('moon');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            window.localStorage.setItem('theme', 'light');
+            document.getElementById("theme-toggle").classList.add('moon');
+            document.getElementById("theme-toggle").classList.remove('sun');
+        }
+    }
+
+    let theme = localStorage.getItem('theme') || '{{ site.data-theme }}';
+    setTheme(theme);
+
+    function modeSwitcher() {
+        let currentMode = document.documentElement.getAttribute('data-theme');
+
+        if (currentMode === "dark") {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+    }
+</script>
+
+</body>
+
+</html>
