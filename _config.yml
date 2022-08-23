@@ -5,15 +5,18 @@ lang: en-US
 timezone: Asia/Baku
 data-theme: dark # default theme "dark" | "light"
 
-pagination:
-  enabled: true
-  permalink: '/page/:num.html'
-  sort_field: 'date'
-  sort_reverse: true
-  per_page: 10
-  trail:
-    before: 4
-    after: 4
+paginate: 1
+paginate_path: "page/:num"
+
+#pagination:
+#  enabled: true
+#  permalink: '/page/:num.html'
+#  sort_field: 'date'
+#  sort_reverse: true
+#  per_page: 10
+#  trail:
+#    before: 4
+#    after: 4
 
 author:
   name: Ramiz Kongulov
@@ -58,7 +61,7 @@ sass:
   style: compressed
 
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-relative-links
 
 collections:
