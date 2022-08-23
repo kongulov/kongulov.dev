@@ -2,7 +2,7 @@
 layout: post
 title: S - Single Responsibility Principle | SOLID
 description: Single Responsibility Principle - a class should be one, and only one, reason to change.
-keywords: php solid single responsibility principle
+keywords: php solid oop coding single responsibility principle
 tags: php oop solid
 ---
 

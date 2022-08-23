@@ -2,7 +2,7 @@
 layout: post
 title: D - Dependency Inversion Principle | SOLID
 description: Dependency Inversion Principle - High level modules should not depend on low level modules; both should depend on abstractions. Abstractions should not depend on details. Details should depend upon abstractions.
-keywords: php solid dependency inversion principle
+keywords: php solid oop coding dependency inversion principle
 tags: php oop solid
 ---
 

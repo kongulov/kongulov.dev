@@ -2,7 +2,7 @@
 layout: post
 title: L - Liskov Substitution Principle | SOLID
 description: Liskov Substitution Principle - Subclasses should be substitutable for their base classes.
-keywords: php solid liskov substitution principle
+keywords: php solid oop coding liskov substitution principle
 tags: php oop solid
 ---
 

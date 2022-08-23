@@ -5,6 +5,7 @@ gem 'jekyll-relative-links'
 gem "tzinfo-data", "~> 1.2021"
 gem 'jekyll-sass-converter'
 gem 'sass-embedded', '~> 1.0'
+gem 'jekyll-seo-tag'
 
 
 # windows specific

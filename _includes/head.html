@@ -1,27 +1,13 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css">
     <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
 
-    <!-- @todo need work seo -->
-  <title>
-      {% if page.tag or page.title %}
-        {% if page.tag %}
-          {{ page.tag | escape }}
-        {% else %}
-          {{ page.title | escape }}
-        {% endif %}
-        -
-      {% endif %}
-      {% if paginator and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
-        Page {{ paginator.page }} of {{ paginator.total_pages }} -
-      {% endif %}
-      {{ site.title | escape }}
-      {% unless page.tag or page.title %}
-        - {{ site.description | escape }}
-      {% endunless %}
-    </title>
+    {% if page.keywords %}
+        <meta name="keywords" content="{{ page.keywords }}" />
+    {% endif %}
+    {% seo %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/{{ site.url }}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon-32x32.png">
@@ -32,9 +18,8 @@
     <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}/feed.json" />
     <link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.url }}/sitemap.xml" />
 
-  {% if site.googlewebfonts %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?{{ site.googlewebfonts }}&display=swap" rel="stylesheet">
-  {% endif %}
-
+    {% if site.googlewebfonts %}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?{{ site.googlewebfonts }}&display=swap" rel="stylesheet">
+    {% endif %}
 </head>

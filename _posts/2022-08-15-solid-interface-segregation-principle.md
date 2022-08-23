@@ -2,7 +2,7 @@
 layout: post
 title: I - Interface Segregation Principle | SOLID
 description: Interface Segregation Principle - Clients should not be forced to depend upon interfaces that they do not use.
-keywords: php solid interface segregation principle
+keywords: php solid oop coding interface segregation principle
 tags: php oop solid
 ---
 
