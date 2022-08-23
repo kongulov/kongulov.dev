@@ -4,6 +4,9 @@ pagination:
     enabled: true
 ---
 <h1 class="mb-0">BLOG</h1>
+
+{{ paginator | inspect }}
+
 <section class="posts post-list" id="Blog">
     {% for post in paginator.posts %}
         <article class="post">
