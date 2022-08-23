@@ -32,7 +32,7 @@ But according to the definition of the principle, which says to separate abstrac
 this fragment violates it because the `EmailSender` class depends on the `Gmail` class.
 
 If you later need to replace the email sending provider, then you will have to change the `EmailSender` class,
-which violates the principle of <a href="{{ site.url }}{{ site.baseurl }}/blog/solid-open-closed-principle" target="_blank">open/closed(OCP)</a>.
+which violates the principle of <a href="{{ site.url }}/blog/solid-open-closed-principle" target="_blank">open/closed(OCP)</a>.
 
 The `EmailSender` class doesn't have to worry about the provider that is being used.
 <br>
@@ -45,7 +45,7 @@ interface EmailProviderInterface {
 The interface has a connect method, and the `Gmail` class implements it.
 Also, instead of checking the type to see whether the passed object belongs to the `Gmail` class in the `EmailSender` constructor,
 we use the interface ownership check. And the `EmailSender` class no longer worries about the type of provider that will be used,
-the main thing is that there is a connection possibility and the <a href="{{ site.url }}{{ site.baseurl }}/blog/solid-open-closed-principle" target="_blank">OCP</a> principle is not violated.
+the main thing is that there is a connection possibility and the <a href="{{ site.url }}/blog/solid-open-closed-principle" target="_blank">OCP</a> principle is not violated.
 ```php
 class Gmail implements EmailProviderInterface {
      public function connect() {

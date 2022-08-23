@@ -1,10 +1,49 @@
 ---
 layout: default
+about:
+    skills: ['PHP','PHPUnit','OOP','SOLID','Design patterns','Laravel','REST','MySQL','PostgreSQL','ElasticSearch','Redis','AWS','Docker','Nginx','Composer','Git','Git-Flow']
+    languages: [
+        { text: 'Russian', 'progress': 5 },
+        { text: 'English', 'progress': 2 },
+        { text: 'Azerbaijani', 'progress': 5 },
+        { text: 'Turkish', 'progress': 4 },
+        { text: 'Georgian', 'progress': 3 },
+    ]
+    experience: [
+        {
+            position: 'Senior PHP Developer',
+            companyName: 'PrePay Electronic Payments',
+            date: 'Aug 2021 - Ongoing',
+            location: 'Ramat-Gan, Israel',
+            description: 'Developed a banking application backend based on microservice architecture. Using the application, users can open bank accounts, conduct transactions, pay bills, control payments, generate invoices, create and sign documents.'
+        },
+        {
+            position: 'Lead PHP Developer',
+            companyName: 'BestComp Group',
+            date: 'Sep 2019 - Aug 2021',
+            location: 'Baku, Azerbaijan',
+            description: 'My team and I have developed and updated the largest auto catalog and classifieds site in the car sector. (https://mashin.al/) "MashinAL" is one of the largest car bulletin boards in Azerbaijan. "MashinAL" has the largest catalog of cars. Here are the technical characteristics, modifications, generations, and other necessary and important data of cars.'
+        },
+        {
+            position: 'Senior PHP Developer',
+            companyName: 'InvestAZ Securities Inc',
+            date: 'Jun 2014 - Mar 2019',
+            location: 'Baku, Azerbaijan',
+            description: 'Creation of new sites and projects for the company. Maintenance and adding new features to an existing site and project. Creation of CRM (Customer Relationship Management) companies'
+        },
+        {
+            position: 'Middle PHP Developer',
+            companyName: 'Start Interactive Agency',
+            date: 'Apr 2012 - May 2014',
+            location: 'Baku, Azerbaijan',
+            description: 'Creation of new sites and projects. Maintenance and adding new functionality to the existing site and the project'
+        }
+    ]
 ---
 <h2 class="mb-0 h1">ABOUT ME</h2>
 <section id="about">
     <div class="about-header align-center">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/me150x150.jpg" alt="Ramiz Kongulov">
+        <img src="{{ site.url }}/assets/images/me150x150.jpg" alt="Ramiz Kongulov">
         <div class="about-info">
             <h1 class="name">Ramiz Kongulov</h1>
             <div class="position">Senior PHP Developer</div>
@@ -63,10 +102,10 @@ layout: default
                 <div class="title">EXPERIENCE</div>
                 <div class="content">
                     <div class="experiences">
-                        {% assign expSize = site.about.experience | size | minus:1 %}
+                        {% assign expSize = page.about.experience | size | minus:1 %}
 
                         {% for i in (0..expSize) %}
-                            {% assign exp = site.about.experience[i] %}
+                            {% assign exp = page.about.experience[i] %}
                             <div class="experience">
                                 <div class="position">{{ exp.position }}</div>
                                 <div class="companyName">{{ exp.companyName }}</div>
@@ -100,7 +139,7 @@ layout: default
                 <div class="title">SKILLS</div>
                 <div class="content">
                     <div class="skills">
-                        {% for skill in site.about.skills %}
+                        {% for skill in page.about.skills %}
                             <span class="skill">{{ skill }}</span>
                         {% endfor %}
                     </div>
@@ -132,10 +171,10 @@ layout: default
                 <div class="title">LANGUAGES</div>
                 <div class="content">
                     <div class="languages">
-                        {% assign langSize = site.about.languages | size | minus:1 %}
+                        {% assign langSize = page.about.languages | size | minus:1 %}
 
                         {% for i in (0..langSize) %}
-                            {% assign lang = site.about.languages[i] %}
+                            {% assign lang = page.about.languages[i] %}
                             <div class="language">
                                 <div class="text">{{ lang.text }}</div>
                                 <div class="progress">

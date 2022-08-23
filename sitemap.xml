@@ -5,17 +5,17 @@ layout: null
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for post in site.posts %}
         <url>
-            <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+            <loc>{{ site.url }}{{ post.url }}</loc>
             <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
             <priority>0.5</priority>
         </url>
     {% endfor %}
     <url>
-        <loc>{{ site.url }}{{ site.baseurl }}/tags</loc>
+        <loc>{{ site.url }}/tags</loc>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>{{ site.url }}{{ site.baseurl }}/about</loc>
+        <loc>{{ site.url }}/about</loc>
         <priority>0.3</priority>
     </url>
     {% assign tags = site.tags | sort %}
@@ -23,7 +23,7 @@ layout: null
         {% assign tagForUrl = tag|first|slugify %}
         {% assign url = "tag/" | append: tagForUrl %}
         <url>
-            <loc>{{ site.url }}{{ site.baseurl }}/{{ url }}</loc>
+            <loc>{{ site.url }}/{{ url }}</loc>
             <priority>0.3</priority>
         </url>
         {% assign postCount = tag[1]|size %}
@@ -35,7 +35,7 @@ layout: null
             {% endif %}
             {% for i in (2..forCount) %}
                 <url>
-                    <loc>{{ site.url }}{{ site.baseurl }}/{{ url }}/page/{{ i }}</loc>
+                    <loc>{{ site.url }}/{{ url }}/page/{{ i }}</loc>
                     <priority>0.3</priority>
                 </url>
             {% endfor %}
