@@ -11,6 +11,10 @@
 {% endunless %}
 </title>
 
+{% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}" />
+{% endif %}
+
 {% if site.page_title %}
     <meta property="og:title" content="{{ site.page_title }}" />
 {% endif %}
