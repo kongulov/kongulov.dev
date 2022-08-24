@@ -7,7 +7,8 @@
     {% if page.keywords %}
         <meta name="keywords" content="{{ page.keywords }}" />
     {% endif %}
-    {% seo %}
+
+    {% include seo.html %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/{{ site.url }}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon-32x32.png">
