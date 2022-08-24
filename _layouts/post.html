@@ -7,7 +7,7 @@ layout: default
     <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
     {% assign tagsCount = page.tags | size %}
     {% if tagsCount > 0 %}
-      <span style="margin: 0 0.6rem;">|</span>
+      <span class="separator">|</span>
       <span class="meta">
         Tags:
         {% for tag in page.tags %}
