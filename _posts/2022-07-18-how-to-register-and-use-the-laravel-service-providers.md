@@ -3,6 +3,11 @@ layout: post
 title: How to register and use the Laravel service providers
 description: Service providers are the backbone of the Laravel framework and do all the heavy lifting when you start an instance of any Laravel application.
 keywords: php coding laravel service providers
+image:
+    path: /assets/images/posts/how-to-register-and-use-the-laravel-service-providers.png
+    width: 620
+    height: 222
+    alt: How to register and use the Laravel service providers
 tags: php laravel
 ---
 
@@ -16,7 +21,11 @@ When you create a service provider, you also need to register it with your Larav
 There are two important methods: boot and register, that your service provider can implement, and we'll discuss them in detail in the last section of this article.
 
 Before moving on to the discussion of the service provider, I will try to introduce the service container as it will be heavily used in your service provider implementation.
-<br><br>
+
+<div class="post-image">
+    <img src="{{ site.url }}{{ page.image.path }}" alt="{{ page.image.alt }}">
+</div>
+
 <h2>Understanding Service Containers and Service Providers</h2>
 <h3>What is a service container?</h3>
 

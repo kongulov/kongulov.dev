@@ -360,6 +360,9 @@ time {
 .align-center{
   align-items: center;
 }
+.text-align-center{
+  text-align: center;
+}
 
 .post-list{
   .post{
@@ -398,6 +401,10 @@ time {
 
   .separator{
     margin: 0 0.6rem;
+  }
+
+  .post-image{
+    text-align: center;
   }
 }
 
@@ -1061,11 +1068,6 @@ pre {
         font-size: 100%;
         color: inherit;
         background-color: transparent;
-
-        .cp, .kd, .kn, .k { color: #CC7832; }
-        .nc, .kt, .nn { color: #A9B7C6; }
-        .n, .nf{ color: #FFC66D; }
-        .nv { color: #9876AA; }
       }
     }
   }
