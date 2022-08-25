@@ -1027,7 +1027,11 @@ pre {
 }*/
 
 
-
+.wb-bw{
+  *{
+    word-break: break-word;
+  }
+}
 
 .language-plaintext{
   background: var(--code-bg-color);
@@ -1039,7 +1043,7 @@ pre {
   color: var(--highlight-text-color);
 }
 
-.language-php{
+.highlighter-rouge{
   .highlight{
     overflow-x: auto;
     margin-bottom: 1rem;
@@ -1064,6 +1068,15 @@ pre {
         .nv { color: #9876AA; }
       }
     }
+  }
+}
+
+.language-php{
+  code{
+    .cp, .kd, .kn, .k { color: #CC7832; }
+    .nc, .kt, .nn { color: #A9B7C6; }
+    .n, .nf{ color: #FFC66D; }
+    .nv { color: #9876AA; }
   }
 }
 

@@ -91,7 +91,7 @@ So, this was the container at your disposal. In the next section, we'll focus on
 If the container is what allows you to define bindings and install dependencies, a service provider is where it all happens.
 
 Let's take a quick look at one of the major service providers to see what it does.
-Open `filevender/laravel/framework/src/Illuminate/Cache/CacheServiceProvider.php`.
+Open <span class="wb-bw">`filevender/laravel/framework/src/Illuminate/Cache/CacheServiceProvider.php`</span>
 
 ```php
 public function register()
@@ -214,7 +214,7 @@ In the next section, we'll look at some practical examples to see what you can d
 <h3>Let's go through the register and boot methods</h3>
 
 First, we'll take a look at the method `register` to understand how you can use it.
-Open the service provider file you created earlier `app/Providers/EnvatoCustomServiceProvider.php` and replace the existing code with the following.
+<span class="wb-bw">Open the service provider file you created earlier `app/Providers/EnvatoCustomServiceProvider.php` and replace the existing code with the following.</span>
 
 ```php
 <?php
@@ -285,7 +285,8 @@ A very important note from the Laravel documentation:
 
 On the other hand, it would be very helpful if you would bind an interface to a specific implementation. Let's take an example to understand this.
 
-Let's create a very simple interface in `app/Library/Services/Contracts/CustomServiceInterface.php`.
+Let's create a very simple interface in
+<span class="wb-bw">`app/Library/Services/Contracts/CustomServiceInterface.php`.</span>
 
 ```php
 <?php
@@ -360,10 +361,12 @@ class EnvatoCustomServiceProvider extends ServiceProvider
 }
 ```
 
+<span class="wb-bw">
 In this case, we have bound the interface `App\Library\Services\Contracts\CustomServiceInterface` to the implementation `DemoOne`.
 Therefore, whenever a dependency needs to be resolved `App\Library\Services\Contracts\CustomServiceInterface`,
 an instance will be created and an object will be returned `App\Library\Services\DemoOne`.
 Now that makes sense, doesn't it?
+</span>
 
 Let's quickly review the controller code.
 
