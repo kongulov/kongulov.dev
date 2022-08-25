@@ -129,11 +129,11 @@ Laravel already has a handy command line utility, `artisan`, that allows you to 
 Go to the command line and run the following command at the root of the application to create a custom service provider.
 
 ```console
-$ php artisan make:provider EnvatoCustomServiceProvider
+$ php artisan make:provider DemoCustomServiceProvider
 Provider created successfully.
 ```
 
-And this command should create a file `EnvatoCustomServiceProvider.php` in the `app/Providers`.
+And this command should create a file `DemoCustomServiceProvider.php` in the `app/Providers`.
 When we open the file, we will see the following code
 
 ```php
@@ -142,7 +142,7 @@ namespace App\Providers;
   
 use Illuminate\Support\ServiceProvider;
   
-class EnvatoCustomServiceProvider extends ServiceProvider
+class DemoCustomServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -204,7 +204,7 @@ To register a service provider, you simply need to add an entry to the service p
     // App\Providers\BroadcastServiceProvider::class,
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
-    App\Providers\EnvatoCustomServiceProvider::class, // <- Insert class here
+    App\Providers\DemoCustomServiceProvider::class, // <- Insert class here
 ],
 ```
 
@@ -214,7 +214,7 @@ In the next section, we'll look at some practical examples to see what you can d
 <h3>Let's go through the register and boot methods</h3>
 
 First, we'll take a look at the method `register` to understand how you can use it.
-<span class="wb-bw">Open the service provider file you created earlier `app/Providers/EnvatoCustomServiceProvider.php` and replace the existing code with the following.</span>
+<span class="wb-bw">Open the service provider file you created earlier `app/Providers/DemoCustomServiceProvider.php` and replace the existing code with the following.</span>
 
 ```php
 <?php
@@ -223,7 +223,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Library\Services\DemoOne;
   
-class EnvatoCustomServiceProvider extends ServiceProvider
+class DemoCustomServiceProvider extends ServiceProvider
 {
     public function boot() {/*...*/}
   
@@ -334,7 +334,7 @@ class DemoTwo implements CustomServiceInterface
 }
 ```
 
-Now, instead of binding a class, we will bind an interface. Open again `EnvatoCustomServiceProvider.php` and modify the code as shown below.
+Now, instead of binding a class, we will bind an interface. Open again `DemoCustomServiceProvider.php` and modify the code as shown below.
 
 ```php
 <?php
@@ -343,7 +343,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Library\Services\DemoOne;
   
-class EnvatoCustomServiceProvider extends ServiceProvider
+class DemoCustomServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -390,7 +390,7 @@ As you may have guessed, `$customServiceInstance` must be an instance of `App\Li
 The beauty of this approach is that you can easily replace the implementation `DemoOne` with another class.
 
 Let's say you want to use an implementation `DemoTwo` instead of `DemoOne`. In this case,
-you just need to make the following changes to the service provider `EnvatoCustomServiceProvider.php`.
+you just need to make the following changes to the service provider `DemoCustomServiceProvider.php`.
 
 Now let's make small changes to the code
 
