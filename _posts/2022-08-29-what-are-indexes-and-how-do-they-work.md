@@ -26,7 +26,7 @@ The file is divided into chunks and each chunk is stored in an empty block.
     <img src="{{ site.url }}{{ page.image.path }}" alt="{{ page.image.alt }}">
 </div>
 
-When reading a file, we go through all the blocks in turn and assemble the file from pieces.
+When reading a file, we go through all the blocks in turn and assemble the file piece by piece.
 Blocks of the same file can be scattered across the disk (fragmentation).
 Then reading the file will slow down, as you will need to jump over different parts of the disk.
 
@@ -47,7 +47,7 @@ And then it starts to sort through the entire file to find the necessary records
 
 In addition, MySQL will compare the data in `each row of the table` with the value in the query.
 Let's say you're working with a table that has 10 records.
-Then MySQL will read all 10 records, compare each of them's age column with the value 29, and select only matching data:
+Then MySQL will read all 10 records, compare each of their `age` column with the value 29, and select only the matching data:
 
 <div class="post-image">
     <img src="{{ site.url }}/assets/images/posts/what-are-indexes-and-how-do-they-work/image2.webp" alt="Finding data in MySQL">
@@ -56,13 +56,13 @@ Then MySQL will read all 10 records, compare each of them's age column with the 
 So there are two problems when reading data:
 
 - Low speed of reading files due to the location of blocks in different parts of the disk (fragmentation).
-- A large number of comparison operations to find the desired data.
+- It requires a large number of comparison operations to find the desired data.
 
 <h3>3. Data sorting</h3>
 
 Let's imagine that we have sorted our 10 entries in descending order.
 Then, using the <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank">binary search algorithm</a>,
-we could select the values we need in a maximum of 4 operations:
+we could select the values we needed in a maximum of four operations:
 
 <div class="post-image">
     <img src="{{ site.url }}/assets/images/posts/what-are-indexes-and-how-do-they-work/image3.webp" alt="Data sorting">
@@ -94,7 +94,7 @@ CREATE INDEX age ON users(age);
 ```
 
 After this operation, MySQL will start using the age index to perform similar queries.
-The index will also be used for selections by ranges of values of this column:
+The index will also be used for selections by ranges of values for this column:
 
 ```sql
 SELECT * FROM users WHERE age < 29
@@ -108,7 +108,7 @@ For queries like this:
 SELECT * FROM users ORDER BY register_date
 ```
 
-the same rule applies - we create an index on the column by which sorting occurs:
+The same rule applies — we create an index on the column by which sorting occurs:
 
 ```sql
 CREATE INDEX register_date ON users(register_date);
@@ -156,7 +156,7 @@ You need to create a unique index on the email column:
 CREATE UNIQUE INDEX email ON users(email)
 ```
 
-Then when searching for data, MySQL will stop after finding the first match. 
+Then, when searching for data, MySQL will stop after finding the first match. 
 In the case of a regular index, one more check (of the next value in the index) will be mandatory.
 
 <h3>5. Composite Indexes</h3>
@@ -183,7 +183,7 @@ CREATE INDEX age_gender ON users(age, gender);
 <h4 class="mb-0">How a composite index works</h4>
 
 To properly use composite indexes, you need to understand how they are stored.
-Everything works exactly the same as for a regular index.
+Everything works exactly the same as it would for a regular index.
 But for values, the values of all incoming columns are used at once.
 For a table with data like this:
 
@@ -213,13 +213,13 @@ Columns from `ORDER BY` - to the end.
 
 <h4 class="mb-0">Search by range</h4>
 
-Imagine that our query will not use a comparison, but a range search:
+Imagine that our query will not use a comparison but a range search:
 
 ```sql
 SELECT * FROM users WHERE age <= 29 AND gender = 'male'
 ```
 
-Then MySQL will not be able to use the full index, because gender values will be different for different values of the age column.
+Then MySQL will not be able to use the full index because gender values will be different for different values of the age column.
 In this case, the database will try to use part of the index (only age) to execute this query:
 
 <pre>
@@ -232,7 +232,7 @@ In this case, the database will try to use part of the index (only age) to execu
 </pre>
 
 First, all data that matches the condition `age <= 29` will be filtered.
-Then, the search for the value `"male"` will be performed without using an index.
+Then, a search for the value `"male"` will be performed without using an index.
 
 <h4 class="mb-0">Sorting</h4>
 
@@ -242,7 +242,7 @@ Composite indexes can also be used for sorting:
 SELECT * FROM users WHERE gender = 'male' ORDER BY age
 ```
 
-In this case, we will need to create the index in a different order, because sorting (ORDER) occurs after filtering (WHERE):
+In this case, we will need to create the index in a different order because sorting (ORDER) occurs after filtering (WHERE):
 
 ```sql
 CREATE INDEX gender_age ON users(gender, age);
