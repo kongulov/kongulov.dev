@@ -61,7 +61,7 @@ So there are two problems when reading data:
 <h3>3. Data sorting</h3>
 
 Let's imagine that we have sorted our 10 entries in descending order.
-Then, using the <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank">binary search algorithm</a>,
+Then, using the <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank" rel="noreferrer">binary search algorithm</a>,
 we could select the values we needed in a maximum of four operations:
 
 <div class="post-image">
