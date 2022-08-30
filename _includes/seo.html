@@ -1,23 +1,22 @@
-<title>
+{% assign title = "" %}
+
 {% if paginator and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
-    Page {{ paginator.page }} -
+    {% assign title = title | append: 'Page ' | append: paginator.page | append: ' - ' %}
 {% endif %}
 {% if page.title %}
-    {{ page.title | escape }} |
+    {% assign pageTitle = page.title | escape %}
+    {% assign title = title | append: pageTitle | append: ' | ' %}
 {% endif %}
-{{ site.title | escape }}
-{% unless page.tag or page.title %}
-    - {{ site.description | escape }}
-{% endunless %}
-</title>
+{% assign siteTitle = site.title | escape %}
+{% assign title = title | append: siteTitle %}
+
+<title>{{ title }}</title>
 
 {% if page.keywords %}
     <meta name="keywords" content="{{ page.keywords }}" />
 {% endif %}
 
-{% if site.page_title %}
-    <meta property="og:title" content="{{ site.page_title }}" />
-{% endif %}
+<meta property="og:title" content="{{ title }}" />
 
 {% if site.author.name %}
     <meta name="author" content="{{ site.author.name }}" />
