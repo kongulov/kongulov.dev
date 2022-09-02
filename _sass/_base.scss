@@ -163,7 +163,7 @@ body {
   text-rendering: optimizeLegibility;
   line-height: 1.75;
   color: var(--main-text-color);
-  min-width: 320px;
+  /*min-width: 320px;*/
 }
 
 a {
@@ -1160,5 +1160,23 @@ pre {
         margin-bottom: 40px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 450px) { /* Small Mobile */
+  main {
+    padding: 0 1rem 1rem;
+  }
+  .flex-row-between{
+    flex-direction: column;
+    align-items: center;
+
+    .home-link{
+      margin-bottom: 1rem;
+    }
+  }
+
+  .page_title{
+    text-align: center;
   }
 }
