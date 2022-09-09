@@ -937,15 +937,30 @@ $link-color: var(--link-color);
       padding-bottom: 0;
     }
 
-    .position{
-      font-size: 1.3rem;
-      line-height: 1.2;
-    }
+    .head{
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
 
-    .companyName{
-      font-size: 1rem;
-      color: #9a9a9a;
-      margin-bottom: 2px;
+      svg, img{
+        margin-right: 10px;
+
+        &.bg-white{
+          background-color: #ffffff;
+        }
+      }
+
+      .titles{
+        .position{
+          font-size: 1.3rem;
+          line-height: 1.2;
+        }
+
+        .companyName{
+          font-size: 1rem;
+          color: #9a9a9a;
+        }
+      }
     }
 
     .date_location{
@@ -974,7 +989,7 @@ $link-color: var(--link-color);
     }
 
     .description{
-      margin-top: 10px;
+      margin-top: 6px;
       font-size: 14px;
     }
   }

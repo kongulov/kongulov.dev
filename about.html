@@ -2,6 +2,11 @@
 layout: default
 title: About Ramiz Kongulov
 description: About Ramiz Kongulov
+image:
+    path: /assets/images/me150x150.jpg
+    width: 150
+    height: 150
+    alt: Ramiz Kongulov
 about:
     skills: ['PHP','PHPUnit','OOP','SOLID','Design patterns','Laravel','REST','MySQL','PostgreSQL','ElasticSearch','Redis','AWS','Docker','Nginx','Composer','Git','Git-Flow']
     languages: [
@@ -13,6 +18,13 @@ about:
     ]
     experience: [
         {
+            icon: '
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 60 60" class="bg-white">
+                    <g transform="translate(0.000000,60.000000) scale(0.100000,-0.100000)">
+                        <path xmlns="http://www.w3.org/2000/svg" d="M0 300 l0 -300 300 0 300 0 0 300 0 300 -300 0 -300 0 0 -300z m391 233 c16 -10 39 -37 51 -61 18 -39 19 -48 8 -85 -29 -98 -183 -170 -198 -93 -2 11 4 16 20 16 32 0 95 40 118 76 63 94 -35 134 -190 78 -97 -35 -134 -20 -68 28 76 54 203 74 259 41z m-149 -250 c-4 -157 -7 -190 -21 -200 -10 -8 -19 -8 -26 -2 -12 12 -13 195 -2 301 8 75 11 79 48 87 3 0 3 -83 1 -186z m216 -175 c-2 -23 -9 -34 -22 -36 -26 -5 -40 12 -32 42 5 19 13 26 32 26 22 0 25 -4 22 -32z" fill="#e61920"/>
+                    </g>
+                </svg>
+            ',
             position: 'Senior PHP Developer',
             companyName: 'PrePay Electronic Payments',
             date: 'Aug 2021 - Ongoing',
@@ -20,6 +32,11 @@ about:
             description: 'Developed a banking application backend based on microservice architecture. Using the application, users can open bank accounts, conduct transactions, pay bills, control payments, generate invoices, create and sign documents.'
         },
         {
+            icon: '
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 97 97" class="bg-white">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M65.6-0.1L29.9,35.6l2.9,2.9l-7.2,7.2l-10-10L51.3,0H0v97.2h31.6l35.7-35.7l-2.9-2.9l7.2-7.2l10,10L45.9,97.1    h51.3V-0.1H65.6z M35.7,81.5L15.6,61.4l33-33l10,10l-7.2,7.2l-2.9-2.9L29.8,61.4l12.9,12.9L35.7,81.5z M48.6,68.6l-10-10l7.2-7.2    l2.9,2.9l18.6-18.7L54.4,22.7l7.2-7.2l20,20.1L48.6,68.6z" fill="#1E648E"/>
+                </svg>
+            ',
             position: 'Lead PHP Developer',
             companyName: 'BestComp Group',
             date: 'Sep 2019 - Aug 2021',
@@ -27,6 +44,17 @@ about:
             description: 'My team and I have developed and updated the largest auto catalog and classifieds site in the car sector. (https://mashin.al/) "MashinAL" is one of the largest car bulletin boards in Azerbaijan. "MashinAL" has the largest catalog of cars. Here are the technical characteristics, modifications, generations, and other necessary and important data of cars.'
         },
         {
+            icon: '
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 29.159 30.926">
+                    <path d="M0,30.926H22.961a6.2,6.2,0,0,0,6.2-6.2V0H6.2A6.2,6.2,0,0,0,0,6.2Z" fill="#088A97"/>
+                    <g transform="translate(2.484 14.705)">
+                        <g transform="translate(13.446)">
+                            <path d="M160.4,157.747a1.241,1.241,0,0,1-.762-.243.833.833,0,0,1-.326-.713A1.111,1.111,0,0,1,159.7,156l7.333-7.386h-7.179a.463.463,0,0,1-.449-.477l0-1.078h9.129a1.25,1.25,0,0,1,.755.243.827.827,0,0,1,.334.713,1.117,1.117,0,0,1-.394.794l-7.647,7.385h7.392a.465.465,0,0,1,.45.478v1.077Z" transform="translate(-159.312 -147.057)" fill="#fff"/>
+                        </g>
+                        <path d="M26.72,157.857l4.44-8.48,4.44,8.48h1.875L32.2,147.65a1.436,1.436,0,0,0-.412-.432,1.194,1.194,0,0,0-.625-.161h0a1.2,1.2,0,0,0-.627.161,1.436,1.436,0,0,0-.412.432l-5.275,10.207Z" transform="translate(-24.846 -147.057)" fill="#fff"/>
+                    </g>
+                </svg>
+            ',
             position: 'Senior PHP Developer',
             companyName: 'InvestAZ Securities Inc',
             date: 'Jun 2014 - Mar 2019',
@@ -34,6 +62,7 @@ about:
             description: 'Creation of new sites and projects for the company. Maintenance and adding new features to an existing site and project. Creation of CRM (Customer Relationship Management) companies'
         },
         {
+            icon: '<img src="/assets/images/start.jpg" alt="Start Interactive Agency">',
             position: 'Middle PHP Developer',
             companyName: 'Start Interactive Agency',
             date: 'Apr 2012 - May 2014',
@@ -45,7 +74,7 @@ about:
 <h2 class="mb-0 h1 page_title">ABOUT ME</h2>
 <section id="about">
     <div class="about-header align-center">
-        <img src="{{ site.url }}/assets/images/me150x150.jpg" alt="Ramiz Kongulov">
+        <img src="{{ site.url }}{{ page.image.path }}" alt="{{ page.image.alt }}">
         <div class="about-info">
             <h1 class="name">Ramiz Kongulov</h1>
             <div class="position">Senior PHP Developer</div>
@@ -108,8 +137,13 @@ about:
                         {% for i in (0..expSize) %}
                             {% assign exp = page.about.experience[i] %}
                             <div class="experience">
-                                <div class="position">{{ exp.position }}</div>
-                                <div class="companyName">{{ exp.companyName }}</div>
+                                <div class="head">
+                                    {{ exp.icon }}
+                                    <div class="titles">
+                                        <div class="position">{{ exp.position }}</div>
+                                        <div class="companyName">{{ exp.companyName }}</div>
+                                    </div>
+                                </div>
                                 <div class="date_location">
                                     <div class="date">
                                         <svg viewBox="203.401 170.345 10.8 12" width="10.8" height="12">
