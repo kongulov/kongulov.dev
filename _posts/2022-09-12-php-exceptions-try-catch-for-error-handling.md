@@ -11,8 +11,6 @@ image:
 tags: php
 ---
 
-<h2>What is an exception?</h2>
-
 PHP 5 has a new error model that allows you to throw and catch exceptions in your application - it's a better way to handle errors than what we had in older versions of PHP.
 All exceptions are instances of the `Exception` base class, which we can extend to introduce our own custom exceptions.
 
