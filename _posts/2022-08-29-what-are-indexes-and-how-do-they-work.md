@@ -464,19 +464,3 @@ This can take much more time than designing the database structure.
 It will be convenient to organize a test environment with a copy of real data and test different index structures there.
 
 Don't create indexes on every column in a query, MySQL doesn't work that way. Use unique indexes where necessary. Always set primary keys.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
