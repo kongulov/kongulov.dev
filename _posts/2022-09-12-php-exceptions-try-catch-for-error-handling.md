@@ -11,7 +11,8 @@ image:
 tags: php
 ---
 
-PHP 5 has a new error model that allows you to throw and catch exceptions in your application - it's a better way to handle errors than what we had in older versions of PHP.
+PHP 5 introduced us to a new error model that is still evolving today.
+This model allows you to throw and catch exceptions in your application - it's a better way to handle errors than older versions of PHP.
 All exceptions are instances of the `Exception` base class, which we can extend to introduce our own custom exceptions.
 
 It is important to note here that exception handling is different from error handling.
