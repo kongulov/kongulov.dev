@@ -137,9 +137,9 @@ In the next section, we'll discuss how to create a custom service provider so th
 Laravel already has a handy command line utility, `artisan`, that allows you to generate template code so you don't have to create it from scratch.
 Go to the command line and run the following command at the root of the application to create a custom service provider.
 
-```console
-$ php artisan make:provider DemoCustomServiceProvider
-Provider created successfully.
+```php
+php artisan make:provider DemoCustomServiceProvider
+// Provider created successfully.
 ```
 
 And this command should create a file `DemoCustomServiceProvider.php` in the `app/Providers`.

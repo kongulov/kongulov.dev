@@ -123,9 +123,9 @@ But in order for `PostRepositoryInterface` to refer to `PostRepository` we need 
 
 Go to the command line and run the following command at the root of the application to create a `RepositoryServiceProvider`.
 
-```console
-$ php artisan make:provider RepositoryServiceProvider
-Provider created successfully.
+```php
+php artisan make:provider RepositoryServiceProvider
+// Provider created successfully.
 ```
 
 And this command should create a file `RepositoryServiceProvider.php` in the `app/Providers`.

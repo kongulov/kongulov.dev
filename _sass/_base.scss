@@ -947,9 +947,11 @@ pre {
 
 .language-php{
   code{
+    .c1 { color: #9ba6ab; }
+    .cd, .s1 { color: #629755; }
     .cp, .kd, .kn, .k { color: #CC7832; }
-    .nc, .kt, .nn { color: #A9B7C6; }
-    .n, .nf{ color: #FFC66D; }
+    .o, .p, .nc, .kt, .nn { color: #A9B7C6; }
+    .n, .nf, .nb{ color: #FFC66D; }
     .nv { color: #9876AA; }
   }
 }
