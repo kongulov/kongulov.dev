@@ -377,9 +377,6 @@ figcaption {
 
 
 // ------------------------------------
-$link-color: rgb(255, 89, 125);
-
-
 .timeline {
   position: center;
   width: 650px;
@@ -563,7 +560,7 @@ $link-color: rgb(255, 89, 125);
   margin-top: -10px;
   background: #fff;
   border-radius: 10px;
-  border: 4px solid $link-color;
+  border: 4px solid rgb(255, 89, 125);
   z-index: 10;
   @media(max-width: 860px) {
     position: absolute;
@@ -580,7 +577,7 @@ $link-color: rgb(255, 89, 125);
   display: inline;
   line-height: 1em;
   font-size: 0.66666em;
-  color: $link-color;
+  color: rgb(255, 89, 125);
   vertical-align: middle;
   @media(max-width: 860px) {
     display: block;
@@ -602,7 +599,7 @@ $link-color: rgb(255, 89, 125);
   line-height: 1.5em;
 
   a {
-    color: $link-color;
+    color: rgb(255, 89, 125);
     text-decoration: none;
 
     &:hover {
