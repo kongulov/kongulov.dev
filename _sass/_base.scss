@@ -3,7 +3,7 @@
 :before {
   box-sizing: border-box;
   background-color: inherit;
-  color: inherit;
+  //color: inherit;
   margin: 0;
   padding: 0;
 }
@@ -12,162 +12,20 @@ html {
   font-size: 15px;
 }
 
-#theme-toggle {
-  opacity: 0.65;
-  position: relative;
-  top: 16px;
-  border-radius: 5px;
-  height: 25px;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  transition: opacity 0.3s ease 0s;
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  padding: 0px;
-  appearance: none;
-  transform: scale(0.8);
-}
-
-html,
-html[data-theme="light"] {
-  --text-font: Play;
-  --source-code-font: Source Code Pro;
-  --very-light-text-color: rgb(222, 222, 222);
-  --light-text-color: rgb(89, 183, 255);
-  --medium-text-color: #555;
-  --main-text-color: #333;
-  --highlight-text-color: #6cb4a0;
-  --dark-text-color: #393e46;
-  --link-color: rgb(50, 87, 209);
-  --code-bg-color: rgb(245, 245, 245);
-
-  background-color: rgb(255, 255, 255);
-
-
-  #theme-toggle div {
-    position: relative;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--theme-ui-colors-transparent, transparent);
-    transform: scale(1);
-    transition: all 0.45s ease 0s;
-    overflow: hidden;
-    box-shadow: inset 8px -8px 0px 0px var(--theme-ui-colors-toggleIcon, #2d3748);
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: -9px;
-      top: -9px;
-      height: 24px;
-      width: 24px;
-      border: none;
-      border-radius: 50%;
-      transform: translate(0px, 0px);
-      opacity: 1;
-      transition: transform 0.45s ease 0s;
-    }
-
-    &::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin: -4px 0px 0px -4px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      box-shadow: 0 -23px 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      0 23px 0 var(--theme-ui-colors-toggleIcon, #2d3748), 23px 0 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      -23px 0 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      15px 15px 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      -15px 15px 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      15px -15px 0 var(--theme-ui-colors-toggleIcon, #2d3748),
-      -15px -15px 0 var(--theme-ui-colors-toggleIcon, #2d3748);
-      transform: scale(0);
-      transition: all 0.35s ease 0s;
-    }
-  }
-}
-
-html[data-theme="dark"] {
-  --text-font: Play;
-  --source-code-font: Source Code Pro;
-  --very-light-text-color: #EEE;
-  --light-text-color: #c4bbf0;
-  --medium-text-color: #52057b;
-  --main-text-color: #EAEAEA;
-  --highlight-text-color: #6cb4a0;
-  --dark-text-color: rgb(36, 38, 42);
-  --link-color: rgb(255, 89, 125);
-  --code-bg-color: rgb(36, 38, 42);
+html{
   background-color: rgb(19, 20, 24);
-
-  #theme-toggle div {
-    position: relative;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 4px solid var(--theme-ui-colors-toggleIcon, #cbd5e0);
-    background-color: var(--theme-ui-colors-toggleIcon, #cbd5e0);
-    transform: scale(0.55);
-    transition: all 0.45s ease 0s;
-    overflow: visible;
-    box-shadow: none;
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: -9px;
-      top: -9px;
-      height: 24px;
-      width: 24px;
-      border: 2px solid var(--theme-ui-colors-toggleIcon, #cbd5e0);
-      border-radius: 50%;
-      transform: translate(14px, -14px);
-      opacity: 0;
-      transition: transform 0.45s ease 0s;
-    }
-
-    &::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin: -4px 0px 0px -4px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      box-shadow: 0 -23px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      0 23px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0), 23px 0 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      -23px 0 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      15px 15px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      -15px 15px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      15px -15px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0),
-      -15px -15px 0 var(--theme-ui-colors-toggleIcon, #cbd5e0);
-      transform: scale(1);
-      transition: all 0.35s ease 0s;
-    }
-  }
 }
 
 body {
-  font-family: var(--text-font), monospace;
+  font-family: Play, monospace;
   text-rendering: optimizeLegibility;
   line-height: 1.75;
-  color: var(--main-text-color);
+  color: #EAEAEA;
   /*min-width: 320px;*/
 }
 
 a {
-  color: var(--link-color);
+  color: rgb(255, 89, 125);
   text-decoration: none;
 
   &:hover {
@@ -177,6 +35,7 @@ a {
 
 .post p {
   margin: 1rem 0;
+  color: #EAEAEA;
 }
 
 .meta {
@@ -212,7 +71,7 @@ img {
 }
 
 hr {
-  background: var(--light-text-color);
+  background: #c4bbf0;
   height: 1px;
   border: 0;
 }
@@ -259,12 +118,12 @@ h2.inherit{
 
 blockquote {
   font-style: italic;
-  border-left: 5px solid var(--dark-text-color);
+  border-left: 5px solid rgb(36, 38, 42);
   padding-left: 1rem;
 }
 
 h1 {
-  color: var(--main-text-color);
+  color: #EAEAEA;
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: bold;
@@ -338,7 +197,7 @@ include_to_scssify
 }
 
 time {
-  color: var(--main-text-color);
+  color: #EAEAEA;
 }
 .mb-0{
   margin-bottom: 0;
@@ -453,7 +312,7 @@ figcaption {
   display: flex;
   position: relative;
   margin-top: 0;
-  border-top: 2px solid var(--light-text-color);
+  border-top: 2px solid #c4bbf0;
   line-height: 1.4;
 
   .post-nav-item {
@@ -461,20 +320,20 @@ figcaption {
     padding-bottom: 10px;
 
     .post-title {
-      color: var(--main-text-color);
+      color: #EAEAEA;
     }
 
     &:hover,
     &:focus {
       .post-title {
-        color: var(--link-color);
+        color: rgb(255, 89, 125);
         opacity: 0.9;
       }
     }
 
     .nav-arrow {
       font-size: 17px;
-      color: var(--main-text-color);
+      color: #EAEAEA;
       margin-bottom: 3px;
       font-weight: bold;
     }
@@ -518,7 +377,7 @@ figcaption {
 
 
 // ------------------------------------
-$link-color: var(--link-color);
+$link-color: rgb(255, 89, 125);
 
 
 .timeline {
@@ -540,7 +399,7 @@ $link-color: var(--link-color);
     width: 6px;
     height: 100%;
     margin-left: -3px;
-    background: var(--light-text-color);
+    background: #c4bbf0;
     z-index: 5;
     @media(max-width: 375px) {
       height: 150%;
@@ -755,7 +614,7 @@ $link-color: var(--link-color);
     position: relative;
     margin: 1em 1em 0 1em;
     padding: 1em;
-    background: var(--code-bg-color);
+    background: rgb(36, 38, 42);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
     z-index: 15;
 
@@ -1047,7 +906,7 @@ $link-color: var(--link-color);
 
 /*code,
 pre {
-  background: var(--code-bg-color);
+  background: rgb(36, 38, 42);
 }*/
 
 
@@ -1058,13 +917,13 @@ pre {
 }
 
 .language-plaintext{
-  background: var(--code-bg-color);
+  background: rgb(36, 38, 42);
   margin: 0 -27px;
   border-width: 1px;
-  font-family: var(--source-code-font), monospace;
+  font-family: Source Code Pro, monospace;
   margin: unset;
   padding: 0.1rem;
-  color: var(--highlight-text-color);
+  color: #6cb4a0;
 }
 
 .highlighter-rouge{
@@ -1083,7 +942,6 @@ pre {
       code{
         padding: 0;
         font-size: 100%;
-        color: inherit;
         background-color: transparent;
       }
     }
