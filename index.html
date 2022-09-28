@@ -10,7 +10,7 @@ pagination:
 
 <section class="posts post-list" id="Blog">
     {% for post in paginator.posts %}
-        <article class="post">
+        <article class="post" data-clarity-region="article">
             <h2 class="post-title">
                 <a title="{{ post.title }}" href="{{ post.url }}">
                     {{ post.title }}
