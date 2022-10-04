@@ -948,9 +948,18 @@ pre {
     .c1 { color: #9ba6ab; }
     .cd, .s1 { color: #629755; }
     .cp, .kd, .kn, .k { color: #CC7832; }
-    .o, .p, .nc, .kt, .nn { color: #A9B7C6; }
+    .o, .p, .nc, .no, .kt, .nn { color: #A9B7C6; }
     .n, .nf, .nb{ color: #FFC66D; }
     .nv { color: #9876AA; }
+    .mi{ color: #6897BB; }
+  }
+}
+
+.language-sql{
+  code{
+    .k { color: #CC7832; }
+    .nv, .o, .p{ color: #A9B7C6; }
+    .mi{ color: #6897BB; }
   }
 }
 

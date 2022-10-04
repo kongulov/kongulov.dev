@@ -8,7 +8,7 @@ image:
     width: 897
     height: 657
     alt: Reading data from disk
-tags: sql mysql indexes
+tags: sql mysql database indexes
 ---
 
 Indexes in MySQL are a great tool for optimizing SQL queries.
