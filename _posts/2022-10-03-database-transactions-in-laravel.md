@@ -9,6 +9,7 @@ image:
     height: 268
     alt: Database transactions in Laravel
 tags: php laravel database
+---
 
 In web development, data integrity and accuracy are important.
 Therefore, we need to be sure that we are writing code that securely stores, updates, and deletes data in our databases.
