@@ -6,7 +6,7 @@ keywords: php coding laravel service providers
 image:
     path: /assets/images/posts/how-to-register-and-use-the-laravel-service-providers.png
     width: 620
-    height: 222
+    height: 333
     alt: How to register and use the Laravel service providers
 tags: php laravel
 ---
