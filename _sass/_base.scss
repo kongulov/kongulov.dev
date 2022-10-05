@@ -957,7 +957,7 @@ pre {
 
 .language-sql{
   code{
-    .k { color: #CC7832; }
+    .k, .nb { color: #CC7832; }
     .n, .nv, .o, .p{ color: #A9B7C6; }
     .mi{ color: #6897BB; }
   }
