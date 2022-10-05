@@ -15,7 +15,7 @@ Indexes in MySQL are a great tool for optimizing SQL queries.
 <br>
 To understand how they work, let's look at working with data without them.
 
-<h3>1. Reading data from disk</h3>
+<h2>1. Reading data from disk</h2>
 
 What we see as files, the hard drive sees them as blocks.
 One file usually occupies several blocks.
@@ -34,7 +34,7 @@ When we look for something inside a file, we need to go through all the blocks i
 If the file is very large, then the number of blocks will be significant.
 The need to jump from block to block, which may be in different places, will greatly slow down the search for data.
 
-<h3>2. Finding data in MySQL</h3>
+<h2>2. Finding data in MySQL</h2>
 
 MySQL tables are regular files. Let's execute a query like this:
 
@@ -58,7 +58,7 @@ So there are two problems when reading data:
 - Low speed of reading files due to the location of blocks in different parts of the disk (fragmentation).
 - It requires a large number of comparison operations to find the desired data.
 
-<h3>3. Data sorting</h3>
+<h2>3. Data sorting</h2>
 
 Let's imagine that we have sorted our 10 entries in descending order.
 Then, using the <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank" rel="noreferrer">binary search algorithm</a>,
@@ -73,7 +73,7 @@ In addition to fewer comparison operations, we would save on reading unnecessary
 An index is a sorted set of values. In MySQL, indexes are always built on a particular column.
 For example, we could build an index on the age column from the example.
 
-<h3>4. Selecting Indexes in MySQL</h3>
+<h2>4. Selecting Indexes in MySQL</h2>
 
 In the simplest case, an index must be created for those columns that are present in the WHERE clause.
 
@@ -159,7 +159,7 @@ CREATE UNIQUE INDEX email ON users(email)
 Then, when searching for data, MySQL will stop after finding the first match. 
 In the case of a regular index, one more check (of the next value in the index) will be mandatory.
 
-<h3>5. Composite Indexes</h3>
+<h2>5. Composite Indexes</h2>
 
 MySQL can only use one index per query (unless MySQL is able to combine select results across multiple indexes).
 Therefore, for queries that use multiple columns, composite indexes must be used.
@@ -262,7 +262,7 @@ In this case, you should create an index like this:
 CREATE INDEX gender_country_age_register ON users(gender, country, age, register_time);
 ```
 
-<h3>6. Using EXPLAIN to analyze Indexes</h3>
+<h2>6. Using EXPLAIN to analyze Indexes</h2>
 
 The EXPLAIN statement will show index usage data for a particular query. For example
 
@@ -328,7 +328,7 @@ mysql> EXPLAIN SELECT * FROM users WHERE age < 29 and gender = 'male';
 
 In this case, MySQL uses the entire `gender_age` index, because the order of the columns in it allows you to make this selection.
 
-<h3>7. Index selectivity</h3>
+<h2>7. Index selectivity</h2>
 
 Let's go back to the query:
 
@@ -390,7 +390,7 @@ This means that the `age_gender` index will perform better than `gender_age`.
 The selectivity of a column is determined by the number of records in the table with the same values.
 When there are few records with the same value, selectivity is high. Such columns should be used first in composite indexes.
 
-<h3>7. Primary Keys</h3>
+<h2>7. Primary Keys</h2>
 
 A primary key is a special type of index that is an identifier for records in a table.
 It is necessarily unique and is specified when creating tables:
@@ -449,7 +449,7 @@ mysql> show table status;
 18 rows in set (0.06 sec)
 </pre>
 <br>
-<h3>When to create indexes?</h3>
+<h2>When to create indexes?</h2>
 
 - Indexes should be created as slow queries are discovered. Queries that run for more than 1 second are prime candidates for optimization.
 - Start creating indexes with the most frequent queries. A query that runs for a second, but 1000 times a day does more damage than a 10-second query that runs several times a day.
@@ -457,7 +457,7 @@ mysql> show table status;
 - Do not create indexes ahead of time, such as in a development environment. Indexes should be set exclusively for the form and type of load of the operating system.
 - Remove unused indexes.
 
-<h3>The most important</h3>
+<h2>The most important</h2>
 
 Allow sufficient time to analyze and organize indexes in MySQL (and other databases).
 This can take much more time than designing the database structure.
