@@ -14,7 +14,7 @@ tags: php laravel database
 In web development, data integrity and accuracy are important.
 Therefore, we need to be sure that we are writing code that securely stores, updates, and deletes data in our databases.
 In this article, we'll take a look at what database transactions are, why they're important, and how to get started using them in Laravel.
-We will also look at typical problems associated with queued jobs and database transactions.
+We will also look at typical problems associated with third-party services and database transactions.
 
 <h2>What are database transactions</h2>
 
