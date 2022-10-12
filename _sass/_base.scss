@@ -33,7 +33,7 @@ a {
 
 .post p {
   margin: 1rem 0;
-  color: #EAEAEA;
+  color: rgb(181 181 189/1);
 }
 
 .meta {
@@ -132,6 +132,7 @@ h2,
 h3,
 h4,
 h5 {
+  color: #EAEAEA;
   font-weight: bold;
   font-size: 2rem;
 }
@@ -270,6 +271,7 @@ time {
 
 pre{
   overflow: auto;
+  color: rgb(181 181 189/1);
 }
 
 main {
@@ -757,6 +759,7 @@ figcaption {
   }
 
   .content{
+    color: rgb(181 181 189/1);
     font-size: 14px;
     line-height: 1.6;
   }
@@ -799,6 +802,7 @@ figcaption {
       }
 
       .titles{
+        color: #ffffff;
         .position{
           font-size: 1.3rem;
           line-height: 1.2;
