@@ -6,7 +6,7 @@ keywords: php solid oop coding liskov substitution principle
 tags: php oop solid
 ---
 
-The Liskov Substitution Principle (LIP) is the third of the five basic principles of object-oriented programming and 
+The Liskov Substitution Principle (LSP) is the third of the five basic principles of object-oriented programming and 
 design, formulated by Robert Martin, known as Uncle Bob.
 <br><br>
 The principle says that
@@ -18,7 +18,7 @@ that is, the behavior of extended classes must be expected as in the base class.
 This implies a ban on manipulating the data of the parent class and overriding the methods of the parent class with a change (but not an extension) of their functionality.
 It was a revolutionary approach for its time and still remains one of the most powerful design principles.
 
-First, let's look at an example that violates the LIP principle.
+First, let's look at an example that violates the LSP principle.
 ```php
 class MediaPlayer
 {
@@ -54,7 +54,7 @@ class WinampMediaPlayer extends MediaPlayer
     }
 }
 ```
-The LIP principle states that classes should treat base class methods equally.
+The LSP principle states that classes should treat base class methods equally.
 <br>
 And `WinampMediaPlayer` only supports audio playback and is incompatible with video playback, and therefore we will get an error
 ```php
@@ -62,12 +62,12 @@ $vlc = new VlcMediaPlayer();
 $vlc->playAudio();
 $vlc->playVideo();
 
-$vlc = new WinampMediaPlayer();
-$vlc->playAudio();
-$vlc->playVideo(); // Тут будет ошибка
+$winamp = new WinampMediaPlayer();
+$winamp->playAudio();
+$winamp->playVideo(); // There will be an error
 ```
 
-Now consider an example that does not violate the LIP principle
+Now consider an example that does not violate the LSP principle
 ```php
 class MediaPlayer
 {
@@ -85,11 +85,6 @@ class VideoMediaPlayer extends MediaPlayer
     }
 }
 
-class DivMediaPlayer extends VideoMediaPlayer
-{
-
-}
-
 class VlcMediaPlayer extends VideoMediaPlayer
 {
 
@@ -104,4 +99,4 @@ class WinampMediaPlayer extends MediaPlayer
 }
 ```
 
-Now inherited classes do not violate the behavior of base classes, and therefore the LIP principle is not violated.
+Now inherited classes do not violate the behavior of base classes, and therefore the LSP principle is not violated.
