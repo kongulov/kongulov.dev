@@ -7,7 +7,7 @@
     {% assign pageTitle = page.title | escape %}
     {% assign title = title | append: pageTitle | append: ' | ' %}
 {% endif %}
-{% assign siteTitle = site.title | escape %}
+{% assign siteTitle = site.site | escape %}
 {% assign title = title | append: siteTitle %}
 
 <title>{{ title }}</title>
