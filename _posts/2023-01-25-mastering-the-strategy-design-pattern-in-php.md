@@ -67,10 +67,6 @@ class ShoppingCart {
         $this->strategy = $strategy;
     }
     
-    public function setStrategy(CalculateTotalCostStrategy $strategy) {
-        $this->strategy = $strategy;
-    }
-    
     public function calculateTotalCost(array $items) {
         return $this->strategy->calculate($items);
     }
@@ -80,12 +76,15 @@ class ShoppingCart {
 Once the context class, interface and the concrete strategies are defined, we can use them to create the objects and switch between strategies at runtime.
 
 ```php
-$shoppingCart = new ShoppingCart(new DiscountCodeStrategy());
 $items = array(10, 20, 30);
-echo $shoppingCart->calculateTotalCost($items); // output: 50 (total cost of items - discount)
 
-$shoppingCart->setStrategy(new ShippingCostStrategy());
-echo $shoppingCart->calculateTotalCost($items); // output: 70 (total cost of items + shipping cost)
+$shoppingCart = new ShoppingCart(new DiscountCodeStrategy());
+echo $shoppingCart->calculateTotalCost($items);
+// output: 50 (total cost of items - discount)
+
+$shoppingCart = new ShoppingCart(new ShippingCostStrategy());
+echo $shoppingCart->calculateTotalCost($items);
+// output: 70 (total cost of items + shipping cost)
 ```
 
 This is a simple example of how the strategy pattern can be implemented
