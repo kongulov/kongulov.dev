@@ -29,15 +29,9 @@ Suppose you are building an e-commerce website that needs to accept payments fro
 Each payment gateway has its own API and interface for processing payments.
 To make it easier to integrate these payment gateways into your website, you can create an adapter for each payment gateway that translates its API into a common interface that your website can use.
 
-Let's create the `PaymentGatewayInterface` interface, which will define the general interface for processing payments.
-We will then create two payment gateway classes, `PayPalGateway` and `StripeGateway`, which have their own payment processing interface.
+Let's imagine that we have 2 classes of payment gateways `PayPalGateway` and `StripeGateway`,  have their own payment processing interface, but they need to be adapted to our interface
 
 ```php
-interface PaymentGatewayInterface
-{
-    public function processPayment(float $amount): bool;
-}
-
 class PayPalGateway
 {
     public function sendPayment(float $amount): bool
@@ -56,11 +50,19 @@ class StripeGateway
     }
 }
 ```
-
-To make these payment gateways compatible with our payment system,we have created two adapter classes `PayPalAdapter` and `StripeAdapter` that implement the `PaymentGatewayInterface` and translate the API of the payment gateway to the common interface.
+First, let's create the `PaymentAdapterInterface` interface, which will define the general interface for processing payments.
 
 ```php
-class PayPalAdapter implements PaymentGatewayInterface
+interface PaymentAdapterInterface
+{
+    public function processPayment(float $amount): bool;
+}
+```
+
+To make these payment gateways compatible with our payment system,we have created two adapter classes `PayPalAdapter` and `StripeAdapter` that implement the `PaymentAdapterInterface` and translate the API of the payment gateway to the common interface.
+
+```php
+class PayPalAdapter implements PaymentAdapterInterface
 {
     private $payPalGateway;
 
@@ -75,7 +77,7 @@ class PayPalAdapter implements PaymentGatewayInterface
     }
 }
 
-class StripeAdapter implements PaymentGatewayInterface
+class StripeAdapter implements PaymentAdapterInterface
 {
     private $stripeGateway;
 
