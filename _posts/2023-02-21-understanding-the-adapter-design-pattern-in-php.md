@@ -50,6 +50,7 @@ class StripeGateway
     }
 }
 ```
+
 First, let's create the `PaymentAdapterInterface` interface, which will define the general interface for processing payments.
 
 ```php
