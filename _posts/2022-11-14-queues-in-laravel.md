@@ -61,7 +61,7 @@ If you have a small project, you have several people registering per hour and it
 then the first option with synchronous sending of a letter suits you. But in most cases it is better to use a queue.
 To do this, let's go back to the beginning of the article and follow a couple of simple steps:
 
-<h3>1) Create a queue handler</h3>
+<h3>1. Create a queue handler</h3>
 
 Execute the command
 ```php
@@ -72,38 +72,38 @@ All default handlers are created in `app/Jobs`.
 Open the created `app/Jobs/ProcessSendingEmail.php` file and update the handle function:
 
 ```php
-public function handle(User $user)                             
-{                                                               
+public function handle(User $user)
+{
     Mail::send(
         'mail.confirm-registration',
-        [                    
-            'html' => 'Confirm your email using the link - https://kongulov.dev'                                               
+        [
+            'html' => 'Confirm your email using the link - https://kongulov.dev'
         ],
-        function ($message) use ($user) {                       
-            $message->to($user->email)->subject('Confirmation of registration');                                                   
+        function ($message) use ($user) {
+            $message->to($user->email)->subject('Confirmation of registration');
         }
-    );                                                         
+    );
 }
 ```
 
 Now our handler receives the user model and sends him a letter using the standard Mail package in Laravel,
 you can familiarize yourself with its capabilities in the <a href="https://laravel.com/docs/9.x/mail" target="_blank">documentation</a>.
 
-<h3>2) Send a new event to the queue</h3>
+<h3>2. Send a new event to the queue</h3>
 
 ```php
-public function register(Request $request)                             
-{                                                               
-    // .... code                                              
-    ProcessSendingEmail::dispatch($user);                      
-    // .... code                                                       
+public function register(Request $request)
+{
+    // .... code
+    ProcessSendingEmail::dispatch($user);
+    // .... code
 }
 ```
 
 After calling the `dispatch` function, a new event will immediately fly to our queue,
 and we just have to run our queue handler and wait for the letter to be sent to the user.
 
-<h3>3) Run the handler for all events in the console with the command</h3>
+<h3>3. Run the handler for all events in the console with the command</h3>
 
 ```php
 php artisan queue:work
@@ -112,7 +112,7 @@ php artisan queue:work
 After the handler is launched, all our events will be processed one by one, and if we had 100 letters to send in the queue,
 then the last letter will obviously not be sent soon and will be approximately like in the first picture, when everyone is waiting in line.
 
-Luckily, we can solve this problem very easily by <a href="https://laravel.com/docs/9.x/queues?ref=https://kongulov.dev/blog/queues-in-laravel#running-multiple-queue-workers" target="_blank">running a few handlers</a> and our emails will be sent in parallel.
+Luckily, we can solve this problem very easily by running multiple handlers with <a href="{{ site.url }}/blog/install-and-configure-supervisor-for-laravel-queue">Supervisor</a> and our emails will be sent in parallel.
 Of course, we must be careful with the choice of the number of handlers,
 because each will occupy the resources of our server and the optimal number must be selected from our capabilities,
 but remember that the more handlers, the faster all our messages will be processed.
