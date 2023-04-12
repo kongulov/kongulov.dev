@@ -58,7 +58,6 @@ user=www-data
 numprocs=8
 redirect_stderr=true
 stdout_logfile=/var/log/laravel-queue.log
-stopwaitsecs=3600
 
 ```
 
