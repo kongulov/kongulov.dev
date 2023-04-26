@@ -6,9 +6,9 @@ layout: default
   {% assign tags = site.tags | sort %}
   <div class="tags">
     {% for tag in tags %}
-    {% assign tagForUrl = tag|first|slugify %}
-    {% assign url = "tag/" | append: tagForUrl %}
-    {% assign urlActive = tagForUrl | append: '.html' %}
+      {% assign tagForUrl = tag|first|slugify %}
+      {% assign url = "tag/" | append: tagForUrl %}
+      {% assign urlActive = tagForUrl | append: '.html' %}
       <a
         class="tag{% if page.path == urlActive %} active{% endif %}"
         href="{{ site.url }}/{{ url }}"
