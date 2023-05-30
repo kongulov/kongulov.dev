@@ -18,6 +18,7 @@ about:
     ]
     experience: [
         {
+            show: 'false',
             icon: '<img src="/assets/images/clarip.jpg" alt="Clarip">',
             position: 'Senior PHP Developer',
             companyName: 'Clarip',
@@ -26,6 +27,7 @@ about:
             description: 'Enterprise privacy management software for CCPA, GDPR, ePrivacy and more. Clarip is the next generation SaaS data privacy platform that helps brands minimize privacy risks and engage customers better.'
         },
         {
+            show: 'true',
             icon: '
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 60 60" class="bg-white">
                     <g transform="translate(0.000000,60.000000) scale(0.100000,-0.100000)">
@@ -40,6 +42,7 @@ about:
             description: 'Developed a banking application backend based on microservice architecture. Using the application, users can open bank accounts, conduct transactions, pay bills, control payments, generate invoices, create and sign documents.'
         },
         {
+            show: 'true',
             icon: '
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 97 97" class="bg-white">
                     <path xmlns="http://www.w3.org/2000/svg" d="M65.6-0.1L29.9,35.6l2.9,2.9l-7.2,7.2l-10-10L51.3,0H0v97.2h31.6l35.7-35.7l-2.9-2.9l7.2-7.2l10,10L45.9,97.1    h51.3V-0.1H65.6z M35.7,81.5L15.6,61.4l33-33l10,10l-7.2,7.2l-2.9-2.9L29.8,61.4l12.9,12.9L35.7,81.5z M48.6,68.6l-10-10l7.2-7.2    l2.9,2.9l18.6-18.7L54.4,22.7l7.2-7.2l20,20.1L48.6,68.6z" fill="#1E648E"/>
@@ -52,6 +55,7 @@ about:
             description: 'My team and I have developed and updated the largest auto catalog and classifieds site in the car sector. (https://mashin.al/) "MashinAL" is one of the largest car bulletin boards in Azerbaijan. "MashinAL" has the largest catalog of cars. Here are the technical characteristics, modifications, generations, and other necessary and important data of cars.'
         },
         {
+            show: 'true',
             icon: '
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 29.159 30.926">
                     <path d="M0,30.926H22.961a6.2,6.2,0,0,0,6.2-6.2V0H6.2A6.2,6.2,0,0,0,0,6.2Z" fill="#088A97"/>
@@ -70,6 +74,7 @@ about:
             description: 'Creation of new sites and projects for the company. Maintenance and adding new features to an existing site and project. Creation of CRM (Customer Relationship Management) companies'
         },
         {
+            show: 'true',
             icon: '<img src="/assets/images/start.jpg" alt="Start Interactive Agency">',
             position: 'Middle PHP Developer',
             companyName: 'Start Interactive Agency',
@@ -144,33 +149,35 @@ about:
 
                         {% for i in (0..expSize) %}
                             {% assign exp = page.about.experience[i] %}
-                            <div class="experience">
-                                <div class="head">
-                                    {{ exp.icon }}
-                                    <div class="titles">
-                                        <div class="position">{{ exp.position }}</div>
-                                        <div class="companyName">{{ exp.companyName }}</div>
+                            {% if exp.show == "true" %}
+                                <div class="experience">
+                                    <div class="head">
+                                        {{ exp.icon }}
+                                        <div class="titles">
+                                            <div class="position">{{ exp.position }}</div>
+                                            <div class="companyName">{{ exp.companyName }}</div>
+                                        </div>
                                     </div>
+                                    <div class="date_location">
+                                        <div class="date">
+                                            <svg viewBox="203.401 170.345 10.8 12" width="10.8" height="12">
+                                                <g fill="#eaeaea" fill-rule="evenodd" class="fill-000000" transform="matrix(0.6, 0, 0, 0.6, 203.400757, 170.345139)">
+                                                    <path d="M16 2h-1V0h-2v2H5V0H3v2H2C.9 2 0 2.9 0 4v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2Zm0 16H2V7h14v11Z"></path>
+                                                    <path d="M4 9h5v5H4z"></path>
+                                                </g>
+                                            </svg>
+                                            {{ exp.date }}
+                                        </div>
+                                        <div class="location">
+                                            <svg viewBox="109.046 23.993 7.457 12" width="7.457" height="12">
+                                                <path d="M 112.774 23.993 C 110.715 23.993 109.046 25.672 109.046 27.743 C 109.046 31.325 112.774 35.993 112.774 35.993 C 112.774 35.993 116.503 31.325 116.503 27.743 C 116.503 25.672 114.834 23.993 112.774 23.993 Z M 112.774 29.562 C 111.799 29.562 111.012 28.768 111.012 27.79 C 111.012 26.812 111.803 26.015 112.774 26.015 C 113.749 26.015 114.537 26.809 114.537 27.79 C 114.537 28.768 113.749 29.562 112.774 29.562 Z" fill="#eaeaea" class="fill-000000"></path>
+                                            </svg>
+                                            {{ exp.location }}
+                                        </div>
+                                    </div>
+                                    <div class="description">{{ exp.description }}</div>
                                 </div>
-                                <div class="date_location">
-                                    <div class="date">
-                                        <svg viewBox="203.401 170.345 10.8 12" width="10.8" height="12">
-                                            <g fill="#eaeaea" fill-rule="evenodd" class="fill-000000" transform="matrix(0.6, 0, 0, 0.6, 203.400757, 170.345139)">
-                                                <path d="M16 2h-1V0h-2v2H5V0H3v2H2C.9 2 0 2.9 0 4v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2Zm0 16H2V7h14v11Z"></path>
-                                                <path d="M4 9h5v5H4z"></path>
-                                            </g>
-                                        </svg>
-                                        {{ exp.date }}
-                                    </div>
-                                    <div class="location">
-                                        <svg viewBox="109.046 23.993 7.457 12" width="7.457" height="12">
-                                            <path d="M 112.774 23.993 C 110.715 23.993 109.046 25.672 109.046 27.743 C 109.046 31.325 112.774 35.993 112.774 35.993 C 112.774 35.993 116.503 31.325 116.503 27.743 C 116.503 25.672 114.834 23.993 112.774 23.993 Z M 112.774 29.562 C 111.799 29.562 111.012 28.768 111.012 27.79 C 111.012 26.812 111.803 26.015 112.774 26.015 C 113.749 26.015 114.537 26.809 114.537 27.79 C 114.537 28.768 113.749 29.562 112.774 29.562 Z" fill="#eaeaea" class="fill-000000"></path>
-                                        </svg>
-                                        {{ exp.location }}
-                                    </div>
-                                </div>
-                                <div class="description">{{ exp.description }}</div>
-                            </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>
