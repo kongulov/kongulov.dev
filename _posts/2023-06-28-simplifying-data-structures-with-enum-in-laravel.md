@@ -37,32 +37,7 @@ enum StatusEnum: string {
 
 Here, we've defined three constants: `ACTIVE`, `INACTIVE`, and `PENDING`, representing different statuses.
 
-To make it even more convenient to work with ENUMs, let's create a trait with certain static methods
-
-Inside the `app/Traits` directory, create a new `InteractWithEnum.php` PHP file.
-
-```php
-<?php
-
-namespace App\Traits;
-
-trait InteractWithEnum {
-  public static function names(): array
-  {
-    return array_column(self::cases(), 'name');
-  }
-
-  public static function values(): array
-  {
-    return array_column(self::cases(), 'value');
-  }
-
-  public static function array(): array
-  {
-    return array_combine(self::values(), self::names());
-  }
-}
-```
+To make it even more convenient to work with ENUMs, we will use the <a href="https://github.com/kongulov/interact-with-enum" ratget="_blank">kongulov/interact-with-enum</a> package with the `InteractWithEnum` trait, which contains useful methods for working with tret
 
 And use it in all our ENUMs to make it look like this
 
@@ -71,7 +46,7 @@ And use it in all our ENUMs to make it look like this
 
 namespace App\Enums;
 
-use App\Traits\InteractWithEnum;
+use Kongulov\Traits\InteractWithEnum;
 
 enum StatusEnum: string {
     use InteractWithEnum;
