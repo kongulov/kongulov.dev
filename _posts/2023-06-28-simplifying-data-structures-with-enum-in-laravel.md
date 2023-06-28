@@ -37,7 +37,14 @@ enum StatusEnum: string {
 
 Here, we've defined three constants: `ACTIVE`, `INACTIVE`, and `PENDING`, representing different statuses.
 
-To make it even more convenient to work with ENUMs, we will use the <a href="https://github.com/kongulov/interact-with-enum" ratget="_blank">kongulov/interact-with-enum</a> package with the `InteractWithEnum` trait, which contains useful methods for working with tret
+To make it even more convenient to work with ENUMs, we will use the <a href="https://github.com/kongulov/interact-with-enum" ratget="_blank">kongulov/interact-with-enum</a> package with the `InteractWithEnum` trait, which contains useful methods for working with ENUMs
+
+Install the package via Composer:
+
+```bash
+# Install interact-with-enum
+composer require kongulov/interact-with-enum
+```
 
 And use it in all our ENUMs to make it look like this
 
