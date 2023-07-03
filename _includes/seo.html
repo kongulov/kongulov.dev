@@ -10,6 +10,10 @@
 {% assign siteTitle = site.site | escape %}
 {% assign title = title | append: siteTitle %}
 
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>{{ title }}</title>
 
 {% if page.keywords %}
@@ -17,12 +21,24 @@
 {% endif %}
 
 <meta property="og:title" content="{{ title }}" />
+<meta property="twitter:title" content="{{ title }}" />
 
 {% if site.author.name %}
     <meta name="author" content="{{ site.author.name }}" />
 {% endif %}
 
 <meta property="og:locale" content="{{ site.page_locale }}" />
+<meta name="robots" content="max-image-preview:large">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/{{ site.url }}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon-16x16.png">
+<link rel="manifest" href="{{ site.url }}/site.webmanifest">
+
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/atom.xml">
+<link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}/feed.json" />
+<link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.url }}/sitemap.xml" />
+<link rel="sitemap" type="application/rss+xml" title="sitemap" href="{{ site.url }}/sitemap.xml" />
 
 {% if page.description %}
     <meta name="description" content="{{ page.description }}" />
@@ -39,8 +55,10 @@
     <meta property="og:site_name" content="{{ site.site_title }}" />
 {% endif %}
 
-{% if page.image %} <!-- @todo need check -->
+{% if page.image %}
     <meta property="og:image" content="{{ site.url }}{{ page.image.path }}" />
+    <meta name="twitter:card" content="{{ page.twitter.card | default: site.twitter.card | default: 'summary_large_image' }}" />
+    <meta property="twitter:image" content="{{ site.url }}{{ page.image.path }}" />
     {% if page.image.width %}
         <meta property="og:image:width" content="{{ page.image.width }}" />
     {% endif %}
@@ -49,7 +67,10 @@
     {% endif %}
     {% if page.image.alt %}
         <meta property="og:image:alt" content="{{ page.image.alt }}" />
+        <meta name="twitter:image:alt" content="{{ site.image.alt }}" />
     {% endif %}
+{% else %}
+    <meta name="twitter:card" content="summary" />
 {% endif %}
 
 {% if page.date %}
@@ -70,20 +91,6 @@
     <link rel="next" href="{{ site.url }}{{ paginator.next_page_path | remove:'.html' }}" />
 {% endif %}
 
-{% if page.image %} <!-- @todo need check -->
-    <meta name="twitter:card" content="{{ page.twitter.card | default: site.twitter.card | default: "summary_large_image" }}" />
-    <meta property="twitter:image" content="{{ site.url }}{{ page.image.path }}" />
-{% else %}
-    <meta name="twitter:card" content="summary" />
-{% endif %}
-
-{% if site.image.alt %} <!-- @todo need check -->
-    <meta name="twitter:image:alt" content="{{ site.image.alt }}" />
-{% endif %}
-
-{% if site.page_title %} <!-- @todo need check -->
-    <meta property="twitter:title" content="{{ site.page_title }}" />
-{% endif %}
 
 {% if site.twitter %} <!-- @todo need check -->
     <meta name="twitter:site" content="@{{ site.twitter.username | remove:'@' }}" />
@@ -105,32 +112,4 @@
     {% if site.facebook.app_id %}
         <meta property="fb:app_id" content="{{ site.facebook.app_id }}" />
     {% endif %}
-{% endif %}
-
-{% if site.webmaster_verifications %} <!-- @todo need check -->
-    {% if site.webmaster_verifications.google %}
-        <meta name="google-site-verification" content="{{ site.webmaster_verifications.google }}" />
-    {% endif %}
-
-    {% if site.webmaster_verifications.bing %}
-        <meta name="msvalidate.01" content="{{ site.webmaster_verifications.bing }}" />
-    {% endif %}
-
-    {% if site.webmaster_verifications.alexa %}
-        <meta name="alexaVerifyID" content="{{ site.webmaster_verifications.alexa }}" />
-    {% endif %}
-
-    {% if site.webmaster_verifications.yandex %}
-        <meta name="yandex-verification" content="{{ site.webmaster_verifications.yandex }}" />
-    {% endif %}
-
-    {% if site.webmaster_verifications.baidu %}
-        <meta name="baidu-site-verification" content="{{ site.webmaster_verifications.baidu }}" />
-    {% endif %}
-
-    {% if site.webmaster_verifications.facebook %}
-        <meta name="facebook-domain-verification" content="{{ site.webmaster_verifications.facebook }}" />
-    {% endif %}
-{% elsif site.google_site_verification %}
-    <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {% endif %}
