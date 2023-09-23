@@ -4,7 +4,7 @@ title: Simplifying data structures with ENUM in Laravel
 description: Simplify data structures in Laravel with ENUM. Learn how to define and use ENUM for efficient and readable code in PHP.
 keywords: PHP, Laravel, ENUM, Trait, software development, programming
 image:
-    path: /assets/images/posts/simplifying-data-structures-with-unum-in-laravel.png
+    path: /assets/images/posts/simplifying-data-structures-with-enum-in-laravel.png
     width: 690
     height: 488
     alt: ENUM in Laravel

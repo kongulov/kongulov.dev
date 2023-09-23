@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Building Efficient Applications with MySQL Stored Procedures
-description: Simplify data structures in Laravel with ENUM. Learn how to define and use ENUM for efficient and readable code in PHP.
-keywords: PHP, database, MySQL, Stored Procedures, SQL, software development, programming
+description: Explore the Power of MySQL Stored Procedures. Boost Performance, Security, and Maintenance in Your Database Management.
+keywords: database, MySQL, Stored Procedures, SQL, software development, programming
 image:
-    path: /assets/images/posts/simplifying-data-structures-with-unum-in-laravel.png
-    width: 690
-    height: 488
-    alt: ENUM in Laravel
+    path: /assets/images/posts/building-efficient-applications-with-mysql-stored-procedures.png
+    width: 1812
+    height: 888
+    alt: Create a stored procedure
 tags: [php, database]
 ---
 
