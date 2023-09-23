@@ -3,7 +3,7 @@ layout: post
 title: O - Open-Closed Principle | SOLID
 description: Open-Closed Principle - Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification
 keywords: php solid oop coding open closed principle
-tags: php oop solid
+tags: [php, oop, solid]
 ---
 
 The Open-Closed Principle (OCP) is second of the five basic principles of object-oriented programming and 

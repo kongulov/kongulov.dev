@@ -2,13 +2,13 @@
 layout: post
 title: What are indexes and how do they work
 description: Indexes in MySQL are a great tool for optimizing SQL queries.
-keywords: database sql mysql index indexes
+keywords: database, sql, mysql, index, indexes, software development, programming
 image:
     path: /assets/images/posts/what-are-indexes-and-how-do-they-work/image1.webp
     width: 897
     height: 657
     alt: Reading data from disk
-tags: sql mysql database indexes
+tags: [database]
 ---
 
 Indexes in MySQL are a great tool for optimizing SQL queries.

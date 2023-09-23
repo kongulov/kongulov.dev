@@ -8,7 +8,7 @@ image:
     width: 499
     height: 312
     alt: Register our events and listeners
-tags: php laravel
+tags: [php, laravel]
 ---
 
 Laravel Events provides a simple implementation of the Observer pattern, allowing you to subscribe to and monitor various events that occur in your application.

@@ -3,7 +3,7 @@ layout: post
 title: I - Interface Segregation Principle | SOLID
 description: Interface Segregation Principle - Clients should not be forced to depend upon interfaces that they do not use.
 keywords: php solid oop coding interface segregation principle
-tags: php oop solid
+tags: [php, oop, solid]
 ---
 
 The Interface Segregation Principle (ISP) is the fourth of the five basic principles of object-oriented programming and 

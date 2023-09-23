@@ -3,7 +3,7 @@ layout: post
 title: L - Liskov Substitution Principle | SOLID
 description: Liskov Substitution Principle - Subclasses should be substitutable for their base classes.
 keywords: php solid oop coding liskov substitution principle
-tags: php oop solid
+tags: [php, oop, solid]
 ---
 
 The Liskov Substitution Principle (LSP) is the third of the five basic principles of object-oriented programming and 

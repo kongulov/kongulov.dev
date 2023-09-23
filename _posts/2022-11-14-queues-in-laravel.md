@@ -8,7 +8,7 @@ image:
     width: 950
     height: 554
     alt: Sending code to the queue handler
-tags: php laravel
+tags: [php, laravel]
 ---
 
 Sometimes individual processes take a long time to complete, such as sending email, payment gateway, etc.

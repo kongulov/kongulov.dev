@@ -8,7 +8,7 @@ image:
     width: 586
     height: 675
     alt: Enhance Your PHP Code with Decorator Design Pattern
-tags: php design-patterns
+tags: [php, design-patterns]
 ---
 
 The Decorator Design Pattern is a design pattern that is used to extend the behavior of an object dynamically, without changing its class.

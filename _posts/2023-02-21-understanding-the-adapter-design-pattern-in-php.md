@@ -8,7 +8,7 @@ image:
     width: 622
     height: 381
     alt: Understanding the Adapter Design Pattern in PHP
-tags: php design-patterns
+tags: [php, design-patterns]
 ---
 
 The Adapter pattern is a structural design pattern that allows two incompatible interfaces to work together.

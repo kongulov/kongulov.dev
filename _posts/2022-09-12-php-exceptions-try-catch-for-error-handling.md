@@ -8,7 +8,7 @@ image:
     width: 850
     height: 610
     alt: Exception handling in a try catch finally block
-tags: php
+tags: [php]
 ---
 
 PHP 5 introduced us to a new error model that is still evolving today.

@@ -8,7 +8,7 @@ image:
     width: 539
     height: 268
     alt: Database transactions in Laravel
-tags: php laravel database
+tags: [php, laravel, database]
 ---
 
 In web development, data integrity and accuracy are important.

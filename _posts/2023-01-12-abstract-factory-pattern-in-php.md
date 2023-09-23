@@ -8,7 +8,7 @@ image:
     width: 555
     height: 355
     alt: Shape Abstract Factory in PHP
-tags: php design-patterns
+tags: [php, design-patterns]
 ---
 
 The Abstract Factory pattern is a design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes.

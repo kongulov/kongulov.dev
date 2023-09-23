@@ -8,7 +8,7 @@ image:
     width: 660
     height: 357
     alt: Configuration file for Laravel queue
-tags: laravel
+tags: [laravel]
 ---
 
 Supervisor is a process control system for Linux that allows you to monitor and control processes on your server.

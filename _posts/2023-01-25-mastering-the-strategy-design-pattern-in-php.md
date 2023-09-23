@@ -8,7 +8,7 @@ image:
     width: 711
     height: 402
     alt: Mastering the Strategy Design Pattern in PHP
-tags: php design-patterns
+tags: [php, design-patterns]
 ---
 
 

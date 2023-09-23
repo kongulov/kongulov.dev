@@ -3,7 +3,7 @@ layout: post
 title: S - Single Responsibility Principle | SOLID
 description: Single Responsibility Principle - a class should be one, and only one, reason to change.
 keywords: php solid oop coding single responsibility principle
-tags: php oop solid
+tags: [php, oop, solid]
 ---
 
 The Single Responsibility Principle (SRP) is the one of the five basic principles of object-oriented programming and design,

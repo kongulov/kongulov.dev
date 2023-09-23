@@ -2,13 +2,13 @@
 layout: post
 title: How to register and use the Laravel service providers
 description: Service providers are the backbone of the Laravel framework and do all the heavy lifting when you start an instance of any Laravel application.
-keywords: php coding laravel service providers
+keywords: php, coding, laravel, service providers
 image:
     path: /assets/images/posts/how-to-register-and-use-the-laravel-service-providers.png
     width: 620
     height: 333
     alt: How to register and use the Laravel service providers
-tags: php laravel
+tags: [php, laravel]
 ---
 
 If you've ever been familiar with the Laravel framework, it's unlikely that you haven't heard of service containers and service providers.

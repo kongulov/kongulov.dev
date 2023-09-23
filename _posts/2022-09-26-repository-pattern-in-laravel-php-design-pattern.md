@@ -2,13 +2,13 @@
 layout: post
 title: Repository Pattern in Laravel - PHP Design Pattern
 description: A Repository is a centralized component that contains logic for accessing data sources. Implementing the Repository Pattern using an interface allows for reduced dependencies between classes, centralizing data access logic for easier maintenance, and separation of business logic from storage methods. In Laravel, using the Eloquent ORM simplifies the code for data persistence logic.
-keywords: php laravel repository pattern ORM interface
+keywords: php, laravel, repository pattern, ORM, interface
 image:
     path: /assets/images/posts/repository-pattern-in-laravel-php-design-pattern.png
     width: 633
     height: 376
     alt: Post Repository Class in PHP
-tags: php design-patterns laravel
+tags: [php, laravel, design-patterns]
 ---
 
 Repositories are classes or components that contain the logic needed to access data sources.
