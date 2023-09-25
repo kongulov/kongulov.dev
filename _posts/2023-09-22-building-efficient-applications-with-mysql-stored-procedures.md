@@ -8,7 +8,7 @@ image:
     width: 1812
     height: 888
     alt: Create a stored procedure
-tags: [php, database]
+tags: [database]
 ---
 
 MySQL stored procedure is a powerful database function that allows you to store and execute a set of SQL statements in the database,
