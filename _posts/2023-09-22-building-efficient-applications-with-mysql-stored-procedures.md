@@ -34,7 +34,7 @@ END //
 DELIMITER ;
 ```
 
-- `DELIMITERU` sed to define the separator. Because the stored procedure contains multiple SQL statements, a separator different from the semicolon is required.
+- `DELIMITER` Used to define the separator. Because the stored procedure contains multiple SQL statements, a separator different from the semicolon is required.
 - `CREATE PROCEDURE` Create a stored procedure that accepts an `user_id` input argument named and contains a set of SQL statements between `BEGIN` and `END`
 
 <h2>Call stored procedure</h2>
