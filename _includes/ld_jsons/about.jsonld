@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Ramiz Kongulov",
+  "gender": "Male",
+  "birthDate": "1993-01-10",
+  "url": "https://kongulov.dev/about",
+  "image": "https://kongulov.dev/assets/images/500x500.jpg",
+  "sameAs": [
+    "https://kongulov.dev",
+    "https://github.com/kongulov",
+    "https://t.me/kongulov",
+    "https://www.linkedin.com/in/kongulov",
+    "https://stackoverflow.com/users/8676838/kongulov"
+  ],
+  "jobTitle": "Senior PHP Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kongulov"
+  }
+}

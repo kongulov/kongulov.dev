@@ -2,10 +2,11 @@
 layout: default
 title: About Ramiz Kongulov
 description: About Ramiz Kongulov
+jsonld: ld_jsons/about.jsonld
 image:
-    path: /assets/images/me150x150.jpg
-    width: 150
-    height: 150
+    path: /assets/images/500x500.jpg
+    width: 500
+    height: 500
     alt: Ramiz Kongulov
 about:
     skills: ['PHP','PHPUnit','OOP','SOLID','Design patterns','Laravel','REST','MySQL','PostgreSQL','ElasticSearch','Redis','AWS','Docker','Nginx','Composer','Git','Git-Flow']
@@ -19,7 +20,7 @@ about:
     experience: [
         {
             show: 'false',
-            icon: '<img src="/assets/images/clarip.jpg" alt="Clarip">',
+            icon: '<img src="/assets/images/clarip.jpg" alt="Clarip" width="50" height="50">',
             position: 'Senior PHP Developer',
             companyName: 'Clarip',
             date: 'Dec 2022 - Ongoing',
@@ -75,7 +76,7 @@ about:
         },
         {
             show: 'true',
-            icon: '<img src="/assets/images/start.jpg" alt="Start Interactive Agency">',
+            icon: '<img src="/assets/images/start.jpg" alt="Start Interactive Agency" width="50" height="50">',
             position: 'Middle PHP Developer',
             companyName: 'Start Interactive Agency',
             date: 'Apr 2012 - May 2014',
@@ -87,7 +88,7 @@ about:
 <h2 class="mb-0 h1 page_title">ABOUT ME</h2>
 <section id="about">
     <div class="about-header align-center">
-        <img src="{{ site.url }}{{ page.image.path }}" alt="{{ page.image.alt }}">
+        <img src="{{ site.url }}{{ page.image.path }}" alt="{{ page.image.alt }}" width="150" height="150">
         <div class="about-info">
             <h1 class="name">Ramiz Kongulov</h1>
             <div class="position">Senior PHP Developer</div>
