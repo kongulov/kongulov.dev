@@ -765,6 +765,8 @@ figcaption {
 }
 
 .experiences{
+  padding-top: 4px;
+
   .experience{
     border-bottom: 1px dashed #9a9a9a;
     padding-bottom: 12px;
@@ -841,8 +843,8 @@ figcaption {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px dashed #9a9a9a;
-    padding-bottom: 12px;
-    margin-bottom: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
 
     .experiences .experience:last-child {
       margin-bottom: 0;
