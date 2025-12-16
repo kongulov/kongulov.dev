@@ -22,6 +22,22 @@ body {
   /*min-width: 320px;*/
 }
 
+.flex {
+  display: flex;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.justify-center {
+  justify-content: center;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.relative {
+  position: relative;
+}
+
 a {
   color: rgb(255, 89, 125);
   text-decoration: none;

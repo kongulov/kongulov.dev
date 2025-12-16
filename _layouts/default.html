@@ -5,40 +5,40 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
     {% include head.html %}
-<body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0&appId=2309136812595594&autoLogAppEvents=1" nonce="mH6dpPER"></script>
-    <main>
-        <section id="intro">
-            <div class="flex-row-between">
-                <a class="home-link" href="{{ site.url }}">Kongulov.dev</a>
-                <!--<button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
-                    <div></div>
-                </button>-->
-                <div class="flex-row-between align-center">
-                    <ul class="menu">
-                        <li>
-                            <a href="{{ site.url }}" class="{% if page.path == 'index.html' %}active{% endif %}">Blog</a>
-                        </li>
-                        <li>
-                            <a href="{{ site.url }}/tags" class="{% if page.path == 'tags.html' %}active{% endif %}">Tags</a>
-                        </li>
-                        <li>
-                            <a href="{{ site.url }}/about" class="{% if page.path == 'about.html' %}active{% endif %}">
-                                About me
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ site.url }}/feed.xml">
-                                Feed
-                            </a>
-                        </li>
-                    </ul>
+    <body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0&appId=2309136812595594&autoLogAppEvents=1" nonce="mH6dpPER"></script>
+        <main>
+            <section id="intro">
+                <div class="flex-row-between">
+                    <a class="home-link" href="{{ site.url }}">Kongulov.dev</a>
+                    <!--<button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+                        <div></div>
+                    </button>-->
+                    <div class="flex-row-between align-center">
+                        <ul class="menu">
+                            <li>
+                                <a href="{{ site.url }}" class="{% if page.path == 'index.html' %}active{% endif %}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{ site.url }}/tags" class="{% if page.path == 'tags.html' %}active{% endif %}">Tags</a>
+                            </li>
+                            <li>
+                                <a href="{{ site.url }}/about" class="{% if page.path == 'about.html' %}active{% endif %}">
+                                    About me
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ site.url }}/feed.xml">
+                                    Feed
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
-        {% include anchor_headings.html html=content anchorBody="#" %}
-    </main>
-</body>
+            </section>
+            {% include anchor_headings.html html=content anchorBody="#" %}
+        </main>
+    </body>
 
 </html>
