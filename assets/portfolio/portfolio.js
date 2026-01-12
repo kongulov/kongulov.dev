@@ -12013,55 +12013,55 @@ const dE = () => E.jsxs("section", {
             title: "COP29 Azerbaijan",
             description: "Official website for the 29th session of the UN Framework Convention on Climate Change Conference of Parties hosted in Azerbaijan",
             url: "https://cop29.az/en/home",
-            image: '/assets/portfolio/cop.png'
+            image: '/assets/portfolio/cop.webp'
         },
         {
             title: "BDU Portal",
             description: "Baku State University official website with information about faculties, departments, admissions, and academic programs",
             url: "https://bdu.info.az/",
-            image: '/assets/portfolio/bdu.png'
+            image: '/assets/portfolio/bdu.webp'
         },
         {
             title: "ESD TechPro DC",
             description: "Corporate information system for document management and business process automation",
             url: "https://esd.techprodc.com/",
-            image: '/assets/portfolio/esd.png'
+            image: '/assets/portfolio/esd.webp'
         },
         {
             title: "QHT Reporting System",
             description: "NGO reporting system for the Ministry of Finance of Azerbaijan",
             url: "https://qht-hesabat.maliyye.gov.az/login",
-            image: '/assets/portfolio/qht.png'
+            image: '/assets/portfolio/qht.webp'
         },
         {
             title: "Unified Court Portal",
             description: "Unified judicial portal of the Republic of Azerbaijan with information about courts, judges, and the legal system",
             url: "https://courts.gov.az/",
-            image: '/assets/portfolio/courts.png'
+            image: '/assets/portfolio/courts.webp'
         },
         {
             title: "E-Court System",
             description: "Electronic court system for online filing of claims, case tracking, and obtaining court documents",
             url: "https://beta.e-mehkeme.gov.az/",
-            image: '/assets/portfolio/mehkeme.png'
+            image: '/assets/portfolio/mehkeme.webp'
         },
         {
             title: "İpoteka.az",
             description: "Azerbaijan's largest real estate portal with property search, rental, and mortgage lending functionality",
             url: "https://ipoteka.az/",
-            image: '/assets/portfolio/ipoteka.png'
+            image: '/assets/portfolio/ipoteka.webp'
         },
         {
             title: "Mega Həyat Sığorta",
             description: "Insurance company offering a full range of life insurance and mandatory employee insurance services",
             url: "https://megalife.az/",
-            image: '/assets/portfolio/megalife.png'
+            image: '/assets/portfolio/megalife.webp'
         },
         {
             title: "My Mega Life Portal",
             description: "Personal client portal for Mega Həyat insurance company with online services and policy management",
             url: "https://my.megalife.az/login",
-            image: '/assets/portfolio/my-megalife.png'
+            image: '/assets/portfolio/my-megalife.webp'
         }
     ], gE = () => E.jsxs("section", {
         id: "projects",
