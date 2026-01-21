@@ -12398,7 +12398,7 @@ const b2 = ({currentSlide: e, totalSlides: t, onPrevious: n, onNext: r}) => {
             responsibilities: ["Content verification from admin panel to website", "Navigation and transitions", "Page structure logic", "Role and access validation", "UI consistency"]
         },
         {
-            title: "BiCloud",
+            title: "BCloud",
             type: "Mobile App + Admin Panel",
             description: "Corporate cloud storage solution for companies.",
             testedFunctionality: ["Document storage", "User access control", "Storage limits (MB restrictions)", "User blocking via admin panel", "Admin panel ↔ Mobile app synchronization", "Behavior when limits are exceeded"]
