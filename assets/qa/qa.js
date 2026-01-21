@@ -12367,6 +12367,13 @@ const b2 = ({currentSlide: e, totalSlides: t, onPrevious: n, onNext: r}) => {
         })
     }), ff = [
         {
+            title: "AzDoc",
+            type: "Web & Mobile Government System",
+            description: "One of the largest government document management systems.",
+            keyPoints: ["Used by government institutions", "Very complex business logic", "High number of users", "Long-term active project"],
+            qaFocus: ["End-to-end document workflows", "Large-scale regression testing", "Complex scenario validation", "Data stability and consistency"]
+        },
+        {
             title: "Vahid Məhkəmə Portalı",
             type: "Web Site + Admin Panel",
             description: "A unified court portal where all website data is managed through an admin panel.",
@@ -12385,22 +12392,10 @@ const b2 = ({currentSlide: e, totalSlides: t, onPrevious: n, onNext: r}) => {
             testedFunctionality: ["User registration and onboarding", "Invoice creation and management", "Payment processing", "Tax calculation accuracy", "Report generation", "Admin panel data integrity"]
         },
         {
-            title: "Obyekt.az",
-            type: "Web Site + Admin Panel",
-            description: "Advertisement platform with paid features.",
-            testingFocus: ["Filters and search functionality", "Correct listing display", "VIP advertisement logic", "Payment verification", "Access after payment", "Data correctness from admin panel", "UI and business rule validation"]
-        },
-        {
             title: "BDU Website",
             type: "Web Site + Admin Panel",
             description: "Official university website managed via admin panel.",
             responsibilities: ["Content verification from admin panel to website", "Navigation and transitions", "Page structure logic", "Role and access validation", "UI consistency"]
-        },
-        {
-            title: "Intranet Contract Management System",
-            type: "Enterprise System",
-            description: "Contract management platform.",
-            testingFocus: ["Business logic validation", "Contract lifecycle scenarios", "Document handling", "Status changes", "Role-based access control"]
         },
         {
             title: "BiCloud",
@@ -12409,11 +12404,16 @@ const b2 = ({currentSlide: e, totalSlides: t, onPrevious: n, onNext: r}) => {
             testedFunctionality: ["Document storage", "User access control", "Storage limits (MB restrictions)", "User blocking via admin panel", "Admin panel ↔ Mobile app synchronization", "Behavior when limits are exceeded"]
         },
         {
-            title: "AzDoc",
-            type: "Web & Mobile Government System",
-            description: "One of the largest government document management systems.",
-            keyPoints: ["Used by government institutions", "Very complex business logic", "High number of users", "Long-term active project"],
-            qaFocus: ["End-to-end document workflows", "Large-scale regression testing", "Complex scenario validation", "Data stability and consistency"]
+            title: "Intranet Contract Management System",
+            type: "Enterprise System",
+            description: "Contract management platform.",
+            testingFocus: ["Business logic validation", "Contract lifecycle scenarios", "Document handling", "Status changes", "Role-based access control"]
+        },
+        {
+            title: "Obyekt.az",
+            type: "Web Site + Admin Panel",
+            description: "Advertisement platform with paid features.",
+            testingFocus: ["Filters and search functionality", "Correct listing display", "VIP advertisement logic", "Payment verification", "Access after payment", "Data correctness from admin panel", "UI and business rule validation"]
         }
     ], z2 = () => {
         const [e, t] = w.useState(0), [n, r] = w.useState(!1), o = 3 + ff.length + 1, i = w.useCallback(u => {
