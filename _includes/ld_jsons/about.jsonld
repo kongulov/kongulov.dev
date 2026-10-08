@@ -14,8 +14,19 @@
     "https://stackoverflow.com/users/8676838/kongulov"
   ],
   "jobTitle": "Senior PHP Developer",
+  "description": "Senior PHP Developer | Laravel | Fintech, Payment Systems, Scalable Backend Architecture",
   "worksFor": {
     "@type": "Organization",
-    "name": "Kongulov"
-  }
+    "name": "Mayflower"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Limassol",
+    "addressCountry": "CY"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Baku State University"
+  },
+  "knowsAbout": ["PHP", "Laravel", "Fintech", "Payment Systems", "Payment Gateway Integration", "RESTful API", "Microservices", "Domain-Driven Design", "MySQL", "PostgreSQL", "Redis", "Elasticsearch", "AWS", "Docker"]
 }
