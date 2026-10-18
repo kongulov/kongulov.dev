@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Captive Test — Safari OK</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 18px/1.6 -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+         min-height: 100dvh; display: grid; place-items: center; text-align: center; padding: 24px; }
+  .ok { font-size: 64px; }
+  h1 { font-size: 26px; margin: 10px 0; }
+  .sid { color: #888; word-break: break-all; }
+  .t { color: #888; font-size: 14px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="ok">✅</div>
+    <h1>Открылся браузер,<br>целевая страница достигнута</h1>
+    <p class="sid">sid: <span id="sid">—</span></p>
+    <p class="t" id="t"></p>
+    <p class="t">Если видна адресная строка Safari с kongulov.dev — значит это настоящий Safari, а не окно CNA.</p>
+  </div>
+<script>
+  var sid = new URLSearchParams(location.search).get('sid') || '(не передан)';
+  document.getElementById('sid').textContent = sid;
+  document.getElementById('t').textContent = 'Время: ' + new Date().toLocaleString('ru-RU');
+</script>
+</body>
+</html>

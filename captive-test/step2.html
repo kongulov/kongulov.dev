@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Captive Test — шаг 2</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 17px/1.5 -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+         padding: max(20px, env(safe-area-inset-top)) 20px 60px; max-width: 640px; margin-inline: auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: #888; margin: 0 0 16px; }
+  .clock { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; margin: 4px 0 18px; }
+  .card { border: 1px solid #8884; border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .tag { display: inline-block; background: #8883; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 14px; }
+  .desc { color: #888; font-size: 14px; margin: 6px 0 12px; }
+  a.btn, button.btn { display: block; width: 100%; text-align: center; text-decoration: none;
+          background: #0a84ff; color: #fff; padding: 18px; border: 0; border-radius: 14px;
+          font-size: 19px; font-weight: 700; cursor: pointer; }
+  button.btn:disabled { background: #8886; }
+  .sid { color: #888; font-size: 13px; word-break: break-all; }
+</style>
+</head>
+<body>
+  <h1>Captive-тест — шаг 2</h1>
+  <p class="sub">Проверь: сменилась ли верхняя кнопка окна входа на «Готово». Затем жми нужный вариант.</p>
+  <div class="clock" id="clock">0.0 с</div>
+  <div class="sid">sid: <span id="sid">—</span></div>
+
+  <div class="card">
+    <span class="tag">Вариант А</span>
+    <div class="desc">Абсолютная https-ссылка, <b>другой домен</b>, <code>target=_blank</code>.</div>
+    <a class="btn" id="a" target="_blank" rel="noopener" href="https://example.com/">Открыть (А)</a>
+  </div>
+
+  <div class="card">
+    <span class="tag">Вариант Б</span>
+    <div class="desc">Абсолютная https-ссылка, <b>домен лендинга</b>, <code>target=_blank</code>.</div>
+    <a class="btn" id="b" target="_blank" rel="noopener" href="https://kongulov.dev/captive-test/landed.html">Открыть (Б)</a>
+  </div>
+
+  <div class="card">
+    <span class="tag">Вариант В</span>
+    <div class="desc">Абсолютная https-ссылка, домен лендинга, <b>без</b> <code>target=_blank</code>.</div>
+    <a class="btn" id="c" href="https://kongulov.dev/captive-test/landed.html">Открыть (В)</a>
+  </div>
+
+  <div class="card">
+    <span class="tag">Вариант Г</span>
+    <div class="desc">Как «А», но жать не раньше <b>20 с</b> после вызова API. Кнопка разблокируется по секундомеру.</div>
+    <button class="btn" id="d" disabled>Доступно через <span id="d-left">20</span> с</button>
+  </div>
+
+<script>
+  var qs = location.search;
+  var sid = new URLSearchParams(qs).get('sid') || new URLSearchParams(qs).get('id') || '(не передан)';
+  document.getElementById('sid').textContent = sid;
+  var sidParam = (sid && sid !== '(не передан)') ? ('?sid=' + encodeURIComponent(sid)) : '';
+
+  // пробросить sid в целевые страницы (А и Г ведут на example.com — туда sid не нужен для проверки Safari)
+  document.getElementById('b').href = 'https://kongulov.dev/captive-test/landed.html' + sidParam;
+  document.getElementById('c').href = 'https://kongulov.dev/captive-test/landed.html' + sidParam;
+
+  // секундомер + разблокировка варианта Г на 20 с
+  var t0 = Date.now(), clk = document.getElementById('clock');
+  var d = document.getElementById('d'), left = document.getElementById('d-left');
+  setInterval(function(){
+    var s = (Date.now()-t0)/1000;
+    clk.textContent = s.toFixed(1) + ' с';
+    if (s >= 20 && d.disabled) {
+      d.disabled = false; d.textContent = 'Открыть (Г)';
+      d.onclick = function(){ window.open('https://example.com/', '_blank', 'noopener'); };
+    } else if (s < 20) {
+      left.textContent = Math.ceil(20 - s);
+    }
+  }, 100);
+</script>
+</body>
+</html>

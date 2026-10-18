@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Captive Test — шаг 1</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 17px/1.5 -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+         padding: max(20px, env(safe-area-inset-top)) 20px 40px; max-width: 640px; margin-inline: auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: #888; margin: 0 0 20px; }
+  .card { border: 1px solid #8884; border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .k { color: #888; font-size: 13px; }
+  .v { font-weight: 700; font-size: 16px; word-break: break-all; }
+  .clock { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .status { font-size: 15px; }
+  a.btn { display: block; text-align: center; text-decoration: none; background: #0a84ff; color: #fff;
+          padding: 18px; border-radius: 14px; font-size: 19px; font-weight: 700; margin-top: 18px; }
+  ol { padding-left: 20px; } li { margin: 6px 0; }
+</style>
+</head>
+<body>
+  <h1>Captive-тест — шаг 1</h1>
+  <p class="sub">Эта страница имитирует окно входа (CNA). Домен kongulov.dev, публичный сертификат.</p>
+
+  <div class="card">
+    <div class="k">sid</div><div class="v" id="sid">—</div>
+    <div class="k" style="margin-top:8px">ip</div><div class="v" id="ip">—</div>
+  </div>
+
+  <div class="card">
+    <div class="status">Проверяем подключение…</div>
+    <div class="clock" id="clock">0.0 с</div>
+    <div class="k">Секундомер с момента открытия страницы (для варианта «г»: ≥20 с после вызова API).</div>
+  </div>
+
+  <div class="card">
+    <b>Порядок прогона</b>
+    <ol>
+      <li>Не закрывая окно входа, вызови на бэкенде открытие интернета для этого <code>sid</code> на 60 с.</li>
+      <li>Нажми кнопку ниже — страница сделает <code>location.href</code> на шаг 2.</li>
+      <li>На шаге 2 проверь, сменилась ли верхняя кнопка окна на «Готово», и жми нужный вариант (а–г).</li>
+    </ol>
+  </div>
+
+  <a class="btn" id="go" href="step2.html">Перейти на шаг 2 (location.href) →</a>
+
+<script>
+  var q = new URLSearchParams(location.search);
+  var sid = q.get('sid') || q.get('id') || '';
+  var ip  = q.get('ip') || '';
+  document.getElementById('sid').textContent = sid || '(не передан)';
+  document.getElementById('ip').textContent  = ip  || '(не передан)';
+  // пробросить параметры на шаг 2
+  document.getElementById('go').href = 'step2.html' + location.search;
+  // секундомер
+  var t0 = Date.now(), el = document.getElementById('clock');
+  setInterval(function(){ el.textContent = ((Date.now()-t0)/1000).toFixed(1) + ' с'; }, 100);
+</script>
+</body>
+</html>
