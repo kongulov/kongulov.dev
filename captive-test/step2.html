@@ -18,7 +18,7 @@
   a.btn, button.btn { display: block; width: 100%; text-align: center; text-decoration: none;
           background: #0a84ff; color: #fff; padding: 18px; border: 0; border-radius: 14px;
           font-size: 19px; font-weight: 700; cursor: pointer; }
-  button.btn:disabled { background: #8886; }
+  button.btn:disabled, a.btn[aria-disabled="true"] { background: #8886; }
   .sid { color: #888; font-size: 13px; word-break: break-all; }
 </style>
 </head>
@@ -48,8 +48,8 @@
 
   <div class="card">
     <span class="tag">Вариант Г</span>
-    <div class="desc">Как «А», но жать не раньше <b>20 с</b> после вызова API. Кнопка разблокируется по секундомеру.</div>
-    <button class="btn" id="d" disabled>Доступно через <span id="d-left">20</span> с</button>
+    <div class="desc">Как «А» (другой домен, <code>target=_blank</code>), но жать не раньше <b>20 с</b>. Это настоящая ссылка, разблокируется по секундомеру.</div>
+    <a class="btn" id="d" target="_blank" rel="noopener" href="https://example.com/" aria-disabled="true">Доступно через <span id="d-left">20</span> с</a>
   </div>
 
 <script>
@@ -65,12 +65,14 @@
   // секундомер + разблокировка варианта Г на 20 с
   var t0 = Date.now(), clk = document.getElementById('clock');
   var d = document.getElementById('d'), left = document.getElementById('d-left');
+  var unlocked = false;
+  // до 20 с блокируем настоящую ссылку; после — отпускаем, чтобы поведение было идентично варианту А
+  d.addEventListener('click', function(e){ if (!unlocked) { e.preventDefault(); } });
   setInterval(function(){
     var s = (Date.now()-t0)/1000;
     clk.textContent = s.toFixed(1) + ' с';
-    if (s >= 20 && d.disabled) {
-      d.disabled = false; d.textContent = 'Открыть (Г)';
-      d.onclick = function(){ window.open('https://example.com/', '_blank', 'noopener'); };
+    if (s >= 20 && !unlocked) {
+      unlocked = true; d.textContent = 'Открыть (Г)'; d.removeAttribute('aria-disabled');
     } else if (s < 20) {
       left.textContent = Math.ceil(20 - s);
     }
