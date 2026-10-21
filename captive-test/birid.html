@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bir ID — вход</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 17px/1.5 -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+         padding: max(24px, env(safe-area-inset-top)) 20px 40px; max-width: 480px; margin-inline: auto; }
+  .brand { font-size: 22px; font-weight: 800; margin: 8px 0 2px; }
+  .sub { color: #888; margin: 0 0 24px; }
+  label { display:block; font-size:13px; color:#888; margin: 14px 0 6px; }
+  input { width:100%; padding:14px; border:1px solid #8884; border-radius:12px; font-size:16px; background:transparent; color:inherit; }
+  a.btn, button.btn { display:block; width:100%; text-align:center; text-decoration:none; margin-top:22px;
+          background:#e4002b; color:#fff; padding:16px; border:0; border-radius:12px; font-size:17px; font-weight:700; cursor:pointer; }
+  .host { margin-top:18px; font-size:12px; color:#aaa; word-break:break-all; }
+</style>
+</head>
+<body>
+  <div class="brand">Bir ID</div>
+  <p class="sub">Вход в Bir Ecosystem (демо-страница на kongulov.dev)</p>
+
+  <label>Телефон</label>
+  <input type="tel" placeholder="+994 __ ___ __ __" value="+994 55 123 45 67">
+  <label>Код из SMS</label>
+  <input type="tel" placeholder="______" value="000000">
+
+  <a class="btn" id="go" href="#">Войти через Bir ID</a>
+
+  <div class="host">Открыто в: <span id="host">—</span></div>
+
+<script>
+  // continue — куда вернуться после «входа»: наш /browser (выдаёт полный интернет).
+  var q = new URLSearchParams(location.search);
+  var cont = q.get('continue') || '';
+  var go = document.getElementById('go');
+  if (cont) { go.href = cont; } else { go.textContent = 'Нет continue-параметра'; }
+  document.getElementById('host').textContent = location.host;
+</script>
+</body>
+</html>
